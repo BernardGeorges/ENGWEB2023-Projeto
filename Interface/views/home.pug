@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  include header.pug
+    .w3-row 
+      .w3-col(style = "width:12.5%")
+        p 
+      .w3-col(style = "width:75%")
+        .w3-card
+          .w3-row-padding
+            - const image = { "margin-top": "12%"}
+            .w3-quarter
+              .w3-margin
+                img(src="/images/jana.png" width = "100%")
+            .w3-threequarter 
+              .w3-container-4.w3-orange.w3-center(style = image)
+                p Um texto muito profundo sobre como a joana ama-nos a todos
+                p e definitivamente nao esta de saco cheio de todo mundo :)
+          .w3-row-padding
+            .w3-threequarter 
+              .w3-container-4.w3-orange.w3-center(style = image)
+                p Um texto sobre como a joana esta mais feliz conosco. E definitivamente não é uma prova que ela era mais feliz
+            .w3-quarter
+              .w3-margin
+                img(src="/images/felicidade.png" width = "100%")
+      .w3-col(style = "width:12.5%")
+        p 
+  include footer.pug
+      
+
