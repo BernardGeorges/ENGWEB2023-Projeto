@@ -3,10 +3,10 @@ var mongoose = require('mongoose');
 
 var fotoSchema = new mongoose.Schema({
         filename: String,
-        image_data: Buffer,
+        filepath: String,
 });
 
-var registoSchema = new mongoose.Schema({
+var produtoSchema = new mongoose.Schema({
         _id: String,
         nome: String,
         marca: String,
@@ -16,4 +16,4 @@ var registoSchema = new mongoose.Schema({
 });
 
 
-module.exports = new mongoose.model('registo',treinoSchema);
+module.exports = new mongoose.model('produtos',produtoSchema);

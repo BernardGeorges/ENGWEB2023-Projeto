@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  - const head = {"display": "inline-block","margin-left": "25px"}
+  header.w3-light-grey.w3-card(style = "width : 100%; position: sticky; top: 0; z-index:9999")
+    img(src="/images/logo1.2.png" width="250" height="auto" style = head)
+    h4(style=head) 
+        a(href="/") Home
+    h4(style=head)
+        a(href="/prod")  Products  
+    h4(style=head)
+        a(href="/services")  Services 
+    h4(style=head)
+        a(href="/contacts")  Contacts
+  .w3-row 
+    .w3-col(style = "width:12.5%")
+      p 
+    .w3-col(style = "width:75%")
+      .w3-card
+        form.w3-container(action="/login" method="POST")
+            fieldset 
+                legend Credenciais: 
+                label Username 
+                input.w3-input(type="text" name="username")
+                label Password 
+                input.w3-input(type="password" name="password")
+            a(href="/register" class="w3-button w3-deep-orange w3-border w3-border-deep-orange w3-round-xxlarge w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style="display: inline") register
+            input.w3-right.w3-button.w3-deep-orange.w3-border.w3-border-deep-orange.w3-round-xxlarge.w3-hover-light-grey.w3-hover-text-deep-orange.w3-text-light-grey(type="submit" value="Send" style="display: inline")
+    .w3-col(style = "width:12.5%")
+      p     
+        
+        
+  include footer 
+

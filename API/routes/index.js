@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Treino = require('../controler/registo')
+var Treino = require('../controler/produtos')
 
 /* GET home page. */
 router.get('/batismos', function(req, res, next) {

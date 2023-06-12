@@ -1,4 +1,4 @@
-var Treino = require('../models/registo')
+var Treino = require('../models/produtos')
 
 // Treino list
 module.exports.batismos = () =>{
