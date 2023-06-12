@@ -29,12 +29,18 @@ router.get('/login', function(req, res){
 router.post('/login', function(req, res){
   axios.post('http://localhost:7013/users/login', req.body)
     .then(response => {
-      res.cookie('token', response.data.token)
+      res.cookie('token', response.data.token, {expires: 3600})
       res.redirect('/')
     })
     .catch(e =>{
       res.render('error', {error: e, message: "Credenciais inválidas"})
     })
+})
+
+router.get('/logout', function(req, res){
+  const expirationDate = new Date(0);
+  res.cookie('token', '', { expires: expirationDate });
+  res.redirect('/')
 })
 
 module.exports = router;
