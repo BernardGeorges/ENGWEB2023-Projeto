@@ -8,6 +8,7 @@ var usersSchema = new mongoose.Schema({
     cart: [String],
     history: [String],
     wishlist: [String],
+    admin: Boolean,
     active: Boolean,
     dateCreated: String
   });

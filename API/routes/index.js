@@ -3,7 +3,7 @@ var router = express.Router();
 var Treino = require('../controler/produtos')
 
 /* GET home page. */
-router.get('/batismos', function(req, res, next) {
+router.get('/', function(req, res, next) {
   if(req.query.ano){
     Treino.getAno(req.query.ano)
     .then(treinos=>{

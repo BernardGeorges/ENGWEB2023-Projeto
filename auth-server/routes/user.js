@@ -26,7 +26,7 @@ router.post('/', auth.verificaAcesso, function(req, res){
 })
 
 router.post('/register', function(req, res) {
-  var user = new userModel({username: req.body.username, name: req.body.name,active: true, dateCreated: d })
+  var user = new userModel({username: req.body.username, name: req.body.name,active: true,admin: false,dateCreated: d })
   var d = new Date().toISOString().substring(0,19)
   userModel.register(user, 
                 req.body.password, 

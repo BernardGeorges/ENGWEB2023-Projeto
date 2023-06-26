@@ -22,6 +22,10 @@ router.get('/prod', function(req, res, next) {
   res.render('contacts', {});
 });
 
+router.get('/register', function(req, res, next) {
+  res.render('register', {});
+});
+
 router.get('/login', function(req, res){
   res.render('loginForm')
 })

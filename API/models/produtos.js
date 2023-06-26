@@ -2,8 +2,10 @@ var mongoose = require('mongoose');
 
 
 var fotoSchema = new mongoose.Schema({
-        filename: String,
-        filepath: String,
+        date: String,
+        name: String,
+        mimetype: String,
+        size: Number
 });
 
 var produtoSchema = new mongoose.Schema({
