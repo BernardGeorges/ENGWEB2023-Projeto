@@ -19,7 +19,7 @@ router.get('/services', function(req, res, next) {
 });
 
 router.get('/prod', function(req, res, next) {
-  res.render('contacts', {});
+  res.render('products', {});
 });
 
 router.get('/login', function(req, res){
