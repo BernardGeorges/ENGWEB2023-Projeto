@@ -15,5 +15,25 @@ block content
     - const btn1 = {"display": "inline-block", "margin-top": "30px", "margin-bottom": "10px", "margin-right": "80px", "margin-left": "10px"}
     a(href="/login", class="w3-center-text w3-button w3-deep-orange w3-border w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey", style=btn1) Log in
 
-  
+  .w3-row
+    .w3-col(style="width: 12.5%")
+      p
+
+    .w3-col(style="width: 75%")
+      .w3-card
+        .w3-row-padding
+          - const products = [{ name: "Product 1", image: "/images/loja.jpeg", description: "Description of Product 1", price: 50.1, marca: "Robenta" }] 
+          each product in products
+            .w3-quarter
+              .w3-margin
+                .product-container
+                  img(src=product.image, style="width: 100%")
+                  .product-overlay
+                    h4.product-name #{product.name}
+                    p.product-description #{product.description}
+                    p.product-price #{product.price}
+
+    .w3-col(style="width: 12.5%")
+      p
+
   include footer.pug
