@@ -6,13 +6,12 @@ block content
     - const head = {"display": "inline-block","margin-left": "5%"}
     - const divs = {"display": "inline-block","margin-left": "2.5%"}
     header.w3-light-grey.w3-card(style = "width : 100%; position: sticky; top: 0; z-index:9999")
-      img(src="/images/logo1.2.png" width="15%" height="auto" style = head)
-      h4(style=divs) 
-          a(href="/") Home
-      h4(style=divs)
-          a(href="/prod")  Products
-      h4(style=divs)
-          a(href="/contacts") Contacts
+      a(href="/")
+        img(src="/images/logo1.2.png" width="15%" height="auto" style = head)
+      h4.w3-inter(style=divs)
+        a(href="/prod")  Produtos
+      h4.w3-inter(style=divs)
+        a(href="/contacts") Contacts
       - const btn1 = {"display": "inliene-block","margin-right": "5%", "margin-top": "1.75%"}
       a.w3-hide(href="/login" class="w3-center-text w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style=btn1) Log in
     div.w3-display-middle(style = "width: 550px; height: 350px ")
