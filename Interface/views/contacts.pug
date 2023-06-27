@@ -3,48 +3,84 @@ extends layout
 block content
   - const head = {"display": "inline-block","margin-left": "5%"}
   - const divs = {"display": "inline-block","margin-left": "2.5%"}
-  header.w3-light-grey.w3-card(style = "width : 100%; position: sticky; top: 0; z-index:9999")
-    img(src="/images/logo1.2.png" width="15%" height="auto" style = head)
-    h4(style=divs) 
-        a(href="/") Home
+  header.w3-light-grey.w3-card.w3-inter(style = "width : 100%; position: sticky; top: 0; z-index:9999")
+    a(href="/")
+      img(src="/images/logo1.2.png" width="15%" height="auto" style = head)
     h4(style=divs)
-        a(href="/prod")  Products  
+        a(href="/prod")  Produtos
     h4(style=divs)
-        a(href="/services")  Services 
-    h4(style=divs)
-        a.w3-text-deep-orange(href="/contacts") Contacts
+        a.w3-text-deep-orange(href="/contacts") Contactos
     - const btn1 = {"display": "inline-block","margin-right": "5%", "margin-top": "2.4%"}
     a(href="/login" class="w3-center-text w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style=btn1) Log in
-  .w3-row.w3-inter
+  - const image = {"margin-bottom": "6%", "margin-top": "3%"}
+  .w3-row.w3-inter.w3-padding-24
     .w3-col(style = "width:12.5%")
       p 
     .w3-col(style = "width:75%")
-        .w3-row-padding
-          - const image = { "margin-top": "12%"}
-          .w3-half 
-            .w3-margin
-              img(src=C:/Users/norab/Documents/Aulas/3ano/Sem2/EW/ProjetoEngWeb/Interface/public/images/felicidade.png style = "width:100%")
-          .w3-half  
-            .w3-container.w3-center(style = image)
-              h1 
-                b CONTATE NOS
+      .w3-container(style="height: 38vh")
+        .w3-row-padding(style="height: 100%")
+          .w3-half(style="height: 100%")
+            .w3-margin(style="height: 100%")
+              img(src="/images/felicidade.png" style = "height: 100%; width:auto")
+          .w3-half(style="height: 100%")
+            .w3-container(style="height: 100%")
+              h2.w3-center.w3-inter(style = image)
+                b FALE CONNOSCO
               form(action="mailto:someone@example.com" method="post" enctype="text/plain")
-                label  Name:
-                input.w3-input(type="text" name="name")
-                label E-mail:<br>
-                input.w3-input(type="text" name="mail")
-                label Comment:
-                input.w3-input(type="text" name="comment" size="50")
-                input.w3-input(type="submit" value="Send")
-                input.w3-input(type="reset" value="Reset")
-        .w3-row-padding
-          .w3-half 
-            .w3-container-4.w3-orange.w3-center(style = image)
-              p Um texto sobre como a joana esta mais feliz conosco. E definitivamente não é uma prova que ela era mais feliz
-          .w3-half
-            .w3-margin
-              img(src="/images/felicidade.png" style = "width:100%")
+                .w3-row-padding
+                  .w3-quarter
+                    label  Name:
+                    input.w3-input(type="text" name="name")
+                  .w3-threequarter
+                    label E-mail:<br>
+                    input.w3-input(type="text" name="mail")
+                .w3-padding
+                  p 
+                    label Comment:
+                  textarea(name="comment", cols="60", rows="4")
+                .w3-center(style = "margin-top: 20px; margin-bottom: 10px")
+                  input.w3-button.w3-deep-orange.w3-border.w3-border-deep-orange.w3-round-xxlarge.w3-hover-light-grey.w3-hover-text-deep-orange.w3-text-light-grey(type="submit" value="SUBMETER" style = "width: 40%; font-weight:600")
+      .w3-margin(style="height:1vh")
+      .w3-container(style="height: 38vh")
+        .w3-half(style="height: 100%")
+          .w3-margin(style="height: 100%")
+            ul.w3-ul(style="height: 100%")
+              li(style="height: 17%")
+                h3.w3-inter.w3-center
+                  b CONTACTOS
+              li(style="height: 17%")
+                .w3-row.w3-display-container(style="height: 100%")
+                  img.w3-col(src="/images/telefone.png" style="height: 100%; width: auto")
+                  .w3-container.w3-display-middle
+                    h3.w3-inter
+                      a(href="Tel: 259-326-347") 259-326-347
+              li(style="height: 17%")
+                .w3-row.w3-display-container(style="height: 100%")
+                  img.w3-col(src="/images/cellphone.png" style="height: 100%; width: auto")
+                  .w3-rest.w3-center
+                    h3.w3-inter
+                      a(href="Tel: 936-631-834") 936-631-834
+                      a  / 
+                      a(href="Tel: 939-914-914") 939-914-914
+              li(style="height: 17%")
+                .w3-row.w3-display-container(style="height: 100%")
+                  img.w3-col(src="/images/email.png" style="height: 100%; width: auto")
+                  .w3-container.w3-display-middle
+                    h3.w3-inter
+                      a(href="mailto:pauloepinto@gmail.com") pauloepinto@gmail.com
+              li(style="height: 17%")
+                .w3-row.w3-display-container(style="height: 100%")
+                  img.w3-col.w3-margin-right(src="/images/street.png" style="height: 100%; width: auto")
+                  .w3-rest.w3-margin-left
+                    h3.w3-inter 
+                      a(href="https://goo.gl/maps/qxxt2RTCe6EGkVGY9")   Rua Jaime Campos, Ed. Jalema - Cave B 5000-431 Vila Real 
+              
+        .w3-half(style="height: 100%")
+          .w3-padding(style="height: 100%")
+            iframe(src="https://www.google.com/maps/embed?pb=!4v1687798373998!6m8!1m7!1s9Pfl5QK7TdSbxF6XKz3c-g!2m2!1d41.30797168579702!2d-7.726043170340031!3f60.895136725770584!4f-8.336282065101813!5f0.7820865974627469" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade")
+            //iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d187.31506246093625!2d-7.726043170340031!3d41.30797168579702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2spt!4v1687798289929!5m2!1sen!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade")
     .w3-col(style = "width:12.5%")
       p 
+  .w3-padding
   include footer.pug
       
