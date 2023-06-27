@@ -6,9 +6,9 @@ block content
   header.w3-light-grey.w3-card.w3-inter(style = "width : 100%; position: sticky; top: 0; z-index:9999")
     a(href="/")
       img(src="/images/logo1.2.png" width="15%" height="auto" style = head)
-    h4(style=divs)
+    h4.w3-inter(style=divs)
         a(href="/prod")  Produtos
-    h4(style=divs)
+    h4.w3-inter(style=divs)
         a.w3-text-deep-orange(href="/contacts") Contactos
     - const btn1 = {"display": "inline-block","margin-right": "5%", "margin-top": "2.4%"}
     a(href="/login" class="w3-center-text w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style=btn1) Log in
@@ -28,25 +28,25 @@ block content
                 b FALE CONNOSCO
               form(action="mailto:someone@example.com" method="post" enctype="text/plain")
                 .w3-row-padding
-                  .w3-quarter
-                    label  Name:
+                  .w3-half
+                    label  Nome:
                     input.w3-input(type="text" name="name")
-                  .w3-threequarter
+                  .w3-half
                     label E-mail:<br>
                     input.w3-input(type="text" name="mail")
                 .w3-padding
                   p 
-                    label Comment:
-                  textarea(name="comment", cols="60", rows="4")
+                    label Comentario:
+                  textarea(name="comment", cols="65", rows="4")
                 .w3-center(style = "margin-top: 20px; margin-bottom: 10px")
-                  input.w3-button.w3-deep-orange.w3-border.w3-border-deep-orange.w3-round-xxlarge.w3-hover-light-grey.w3-hover-text-deep-orange.w3-text-light-grey(type="submit" value="SUBMETER" style = "width: 40%; font-weight:600")
-      .w3-margin(style="height:1vh")
+                  input.w3-button.w3-deep-orange.w3-border.w3-border-deep-orange.w3-round-xxlarge.w3-hover-light-grey.w3-hover-text-deep-orange.w3-text-light-grey(type="submit" value="ENVIAR" style = "width: 40%; font-weight:600")
+      .w3-margin(style="height:3vh")
       .w3-container(style="height: 38vh")
         .w3-half(style="height: 100%")
           .w3-margin(style="height: 100%")
             ul.w3-ul(style="height: 100%")
               li(style="height: 17%")
-                h3.w3-inter.w3-center
+                h2.w3-inter.w3-center
                   b CONTACTOS
               li(style="height: 17%")
                 .w3-row.w3-display-container(style="height: 100%")
@@ -73,7 +73,8 @@ block content
                   img.w3-col.w3-margin-right(src="/images/street.png" style="height: 100%; width: auto")
                   .w3-rest.w3-margin-left
                     h3.w3-inter 
-                      a(href="https://goo.gl/maps/qxxt2RTCe6EGkVGY9")   Rua Jaime Campos, Ed. Jalema - Cave B 5000-431 Vila Real 
+                      a(href="https://goo.gl/maps/qxxt2RTCe6EGkVGY9")   Rua Jaime Campos, Ed. Jalema - Cave B
+                      a(href="https://goo.gl/maps/qxxt2RTCe6EGkVGY9") 5000-431 Vila Real 
               
         .w3-half(style="height: 100%")
           .w3-padding(style="height: 100%")
