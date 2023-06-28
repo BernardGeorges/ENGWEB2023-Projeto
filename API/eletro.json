@@ -1,0 +1,802 @@
+[
+    {
+      "_id": "2a8fa978-ab0e-439d-9e34-f5b84bcfd3d5",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "JDAS4",
+      "preco": 880,
+      "marca": "Samsung"
+    },
+    {
+      "_id": "36eb3008-3945-4513-ab31-ef46009f5843",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "J-3DA",
+      "preco": 212,
+      "marca": "Whirlpool"
+    },
+    {
+      "_id": "4baac9ca-09a4-4b2e-985e-57b302f9d1f4",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Aspirador",
+      "modelo": "7AJ83",
+      "preco": 51,
+      "marca": "Talus"
+    },
+    {
+      "_id": "827f744b-bd22-406a-854b-6d10cdba1574",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "DA4-1D",
+      "preco": 164,
+      "marca": "Samsung"
+    },
+    {
+      "_id": "97d4c2a9-f2f9-4446-b385-2f348be56d77",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "K789",
+      "preco": 377,
+      "marca": "Miele"
+    },
+    {
+      "_id": "5c100192-5092-4df3-983a-6e95cfa3349e",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "8K2NT",
+      "preco": 881,
+      "marca": "Samsung"
+    },
+    {
+      "_id": "bbff9007-7807-4e66-af1b-5eda177c9be8",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "1D5RM",
+      "preco": 160,
+      "marca": "Whirlpool"
+    },
+    {
+      "_id": "1d34f823-3fb7-4f14-9d84-6dc2e89fbdc3",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "DA4-1D",
+      "preco": 194,
+      "marca": "Candy"
+    },
+    {
+      "_id": "64741f88-dff1-4aec-8a16-046b828d9bb0",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "M543",
+      "preco": 556,
+      "marca": "Indesit"
+    },
+    {
+      "_id": "266ab8eb-e17a-4eac-b265-90eb32470d3d",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "J-3DA",
+      "preco": 273,
+      "marca": "Miele"
+    },
+    {
+      "_id": "0304e255-e3aa-43cf-b3d2-a947c652937a",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "W789",
+      "preco": 779,
+      "marca": "Siemens"
+    },
+    {
+      "_id": "3d8cedfc-5546-4841-bc37-01b2042110b7",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "0ND-2D",
+      "preco": 345,
+      "marca": "Miele"
+    },
+    {
+      "_id": "3a406020-e2f7-4595-862f-d0c7b20f2885",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "91-RJW",
+      "preco": 461,
+      "marca": "Siemens"
+    },
+    {
+      "_id": "a1c6eabb-e200-4dd8-b732-e7c61e1ec172",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "F123",
+      "preco": 320,
+      "marca": "Miele"
+    },
+    {
+      "_id": "b0d9ef1a-c95b-42af-ba3e-e0ceeb8218f2",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "JSA3K-32",
+      "preco": 587,
+      "marca": "AEG"
+    },
+    {
+      "_id": "80df8bc2-8063-4b3b-882c-51523c8c936b",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "9DAS-A",
+      "preco": 993,
+      "marca": "Samsung"
+    },
+    {
+      "_id": "c800ea7f-9880-4495-86d0-f0a33fdeb86f",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "J-3DA",
+      "preco": 235,
+      "marca": "Miele"
+    },
+    {
+      "_id": "1315b465-e3d0-48e9-b8ba-fe5ff720a88f",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "SA-4AE",
+      "preco": 448,
+      "marca": "Indesit"
+    },
+    {
+      "_id": "d60df2b3-2d19-4971-ab9b-2e96808d5d4e",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Aspirador",
+      "modelo": "3R8XS",
+      "preco": 31,
+      "marca": "Hoover"
+    },
+    {
+      "_id": "d8f11d51-ade2-4cfe-bec1-7c1fc04399d9",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "K789",
+      "preco": 237,
+      "marca": "Miele"
+    },
+    {
+      "_id": "a16c7e6a-a493-4433-a03e-8005bc8d1a26",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "1D5RM",
+      "preco": 668,
+      "marca": "Samsung"
+    },
+    {
+      "_id": "8d2a9533-66bf-4fea-a225-0d0b385598de",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "J-3DA",
+      "preco": 239,
+      "marca": "Miele"
+    },
+    {
+      "_id": "fa4b1514-21cc-4e81-9189-9559d24b0990",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "1D5RM",
+      "preco": 165,
+      "marca": "Whirlpool"
+    },
+    {
+      "_id": "946619b4-5e7a-4800-9ccf-1bbfff787de3",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "L321",
+      "preco": 731,
+      "marca": "Indesit"
+    },
+    {
+      "_id": "816ec9fa-d027-444b-a517-c738cd7a778c",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "SA-4AE",
+      "preco": 596,
+      "marca": "Siemens"
+    },
+    {
+      "_id": "56d3f1cf-1067-454e-b918-f93ad12909a8",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "ES-23D",
+      "preco": 598,
+      "marca": "Lindy"
+    },
+    {
+      "_id": "c00ec1bf-c37a-455b-adca-f853a49d4fa0",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "9DAS-A",
+      "preco": 880,
+      "marca": "NOS"
+    },
+    {
+      "_id": "641d3f1e-2bcd-4e77-8832-0804b7c55e35",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "8K2NT",
+      "preco": 914,
+      "marca": "Lindy"
+    },
+    {
+      "_id": "cfb6d978-27ea-4bee-bac5-cb7933e95ff0",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "K789",
+      "preco": 274,
+      "marca": "Whirlpool"
+    },
+    {
+      "_id": "6024ae09-9f2f-48d7-8cb9-f3c991facb74",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "8K2NT",
+      "preco": 87,
+      "marca": "Candy"
+    },
+    {
+      "_id": "8c122b5f-11ed-4281-9696-4034630a95be",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "SA-4AE",
+      "preco": 711,
+      "marca": "Indesit"
+    },
+    {
+      "_id": "27c80f05-9e2e-4e6a-9f95-2817d4d04e02",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Aspirador",
+      "modelo": "7AJ83",
+      "preco": 77,
+      "marca": "Hoover"
+    },
+    {
+      "_id": "bafd8f0d-19d2-480d-a52d-2be960edb89f",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "DKA72",
+      "preco": 105,
+      "marca": "Samsung"
+    },
+    {
+      "_id": "7dcfe007-2863-489a-b5f5-fd736a92ef01",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "F123",
+      "preco": 295,
+      "marca": "Whirlpool"
+    },
+    {
+      "_id": "a33ad8c1-61c5-4a02-af36-8427552c46b4",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "DA4-1D",
+      "preco": 113,
+      "marca": "Whirlpool"
+    },
+    {
+      "_id": "90df3119-02a5-433c-a0ce-febdaf3baaed",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "DKA72",
+      "preco": 143,
+      "marca": "Candy"
+    },
+    {
+      "_id": "77c0408e-edef-4672-a5b9-5d50893c951a",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "34D-AD4",
+      "preco": 166,
+      "marca": "LG"
+    },
+    {
+      "_id": "d916ff17-7dac-49f0-b8d2-a28360c57081",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "W789",
+      "preco": 430,
+      "marca": "Siemens"
+    },
+    {
+      "_id": "bfa08cd8-9906-47f7-a8e4-c79e912c2676",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "I313",
+      "preco": 98,
+      "marca": "Samsung"
+    },
+    {
+      "_id": "4b9a64dd-82ee-4bba-a191-9f0187dd53eb",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Aspirador",
+      "modelo": "7AJ83",
+      "preco": 46,
+      "marca": "Hoover"
+    },
+    {
+      "_id": "bbb825cd-3f50-427a-8f76-d508e484c0ee",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "F123",
+      "preco": 314,
+      "marca": "Miele"
+    },
+    {
+      "_id": "9269b772-831c-4529-b289-dbff481b7166",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "ODA93",
+      "preco": 202,
+      "marca": "Miele"
+    },
+    {
+      "_id": "b3b879fd-4b34-4248-884c-8af067c599fa",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "KASD-4",
+      "preco": 378,
+      "marca": "Sony"
+    },
+    {
+      "_id": "8a2b12bb-0daa-41eb-907a-4fbd353c7b8c",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "W789",
+      "preco": 623,
+      "marca": "Indesit"
+    },
+    {
+      "_id": "e1fd5612-7726-4f0d-a024-6c6db383bf3a",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "85D-12S",
+      "preco": 854,
+      "marca": "Lindy"
+    },
+    {
+      "_id": "b1f03d64-fd12-4d00-a31a-34febc2a203e",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "J-3DA",
+      "preco": 387,
+      "marca": "Miele"
+    },
+    {
+      "_id": "c8e3a5b6-cd31-4ccd-bf07-4bb73770ded6",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "R456",
+      "preco": 364,
+      "marca": "Beko"
+    },
+    {
+      "_id": "ad251048-1cc8-4e46-8d2d-8d3d30dc6838",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "DA4-1D",
+      "preco": 117,
+      "marca": "Candy"
+    },
+    {
+      "_id": "33aef574-1b78-4820-976e-74304c49221e",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "I313",
+      "preco": 111,
+      "marca": "Samsung"
+    },
+    {
+      "_id": "bd28fbb2-ab1e-4ac6-a8ab-651f8c37e4ce",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "91-RJW",
+      "preco": 466,
+      "marca": "Siemens"
+    },
+    {
+      "_id": "f1c66ab1-0a00-49ff-a8b8-08fb9196edc2",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "L321",
+      "preco": 544,
+      "marca": "Indesit"
+    },
+    {
+      "_id": "e971995a-65a3-49e9-9f75-31b0883baf34",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "8K2NT",
+      "preco": 842,
+      "marca": "Lindy"
+    },
+    {
+      "_id": "7dea3256-c219-46fa-838b-b866fce82f26",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "85D-12S",
+      "preco": 433,
+      "marca": "Lindy"
+    },
+    {
+      "_id": "3d09ef77-1e24-4716-a1b8-2cba93672620",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "JSA3K-32",
+      "preco": 410,
+      "marca": "Siemens"
+    },
+    {
+      "_id": "4508346b-86c2-4d88-82f1-a1803f5c0040",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "R456",
+      "preco": 204,
+      "marca": "Electrolux"
+    },
+    {
+      "_id": "68f24fc2-f5d4-4487-b88f-bdeaaa336a9d",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "ODA93",
+      "preco": 406,
+      "marca": "Miele"
+    },
+    {
+      "_id": "8f99eb5b-ee22-4baf-a17a-a93b15c9021c",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "F123",
+      "preco": 477,
+      "marca": "Electrolux"
+    },
+    {
+      "_id": "440be89c-3ed4-4361-8c8a-4f6958121d23",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "91-RJW",
+      "preco": 465,
+      "marca": "AEG"
+    },
+    {
+      "_id": "82a0d3ed-496d-4b7a-b7bc-b57e09812847",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "DA4-1D",
+      "preco": 200,
+      "marca": "Candy"
+    },
+    {
+      "_id": "e458d3a9-62bf-4f08-8d63-f5c2c5ba9002",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "DA4-1D",
+      "preco": 191,
+      "marca": "LG"
+    },
+    {
+      "_id": "3388c5eb-bd82-4165-a866-115ec906d4e9",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "I313",
+      "preco": 120,
+      "marca": "Candy"
+    },
+    {
+      "_id": "b64f7868-59df-43a5-878f-c294df3d2faa",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "1D5RM",
+      "preco": 106,
+      "marca": "LG"
+    },
+    {
+      "_id": "0f917fb5-4f2c-4823-b0f2-a59edd376695",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Aspirador",
+      "modelo": "7JMN-3O",
+      "preco": 81,
+      "marca": "Beko"
+    },
+    {
+      "_id": "11de8c11-3759-4439-94c4-be3486e54882",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "K789",
+      "preco": 301,
+      "marca": "Beko"
+    },
+    {
+      "_id": "165d3c6a-c835-4db3-81cb-68f0de3fda24",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Aspirador",
+      "modelo": "3R8XS",
+      "preco": 67,
+      "marca": "Beko"
+    },
+    {
+      "_id": "8f378e53-ffb2-47d2-9074-2582921ef5ea",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "L321",
+      "preco": 739,
+      "marca": "Indesit"
+    },
+    {
+      "_id": "6ed12f58-fd08-4ca8-a8ee-d82114ba4fc6",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Aspirador",
+      "modelo": "7AJ83",
+      "preco": 74,
+      "marca": "Beko"
+    },
+    {
+      "_id": "6b5c48ae-515d-4543-81db-470a481048e4",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "DA4-1D",
+      "preco": 166,
+      "marca": "LG"
+    },
+    {
+      "_id": "76f171ea-648e-4f31-b1f2-e64ee141ca2f",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "34D-AD4",
+      "preco": 193,
+      "marca": "Samsung"
+    },
+    {
+      "_id": "8fe4c766-6924-4189-9f32-5c1c8efc38ef",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "1D5RM",
+      "preco": 582,
+      "marca": "LG"
+    },
+    {
+      "_id": "e77eb6ed-6fd9-4405-b0f8-f48604ea9584",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "DA4-1D",
+      "preco": 146,
+      "marca": "Candy"
+    },
+    {
+      "_id": "1e1690b2-4432-4321-95c2-625413af3021",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "I313",
+      "preco": 80,
+      "marca": "Candy"
+    },
+    {
+      "_id": "ad7d84ba-3d77-4fe1-996b-50a3f206293f",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "JDAS4",
+      "preco": 252,
+      "marca": "NOS"
+    },
+    {
+      "_id": "d9fd27c5-7270-4ada-a2c0-3dfc02de74bf",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "L321",
+      "preco": 361,
+      "marca": "Siemens"
+    },
+    {
+      "_id": "6b73621d-b58c-44e6-a01b-407ca1a8be67",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "1D5RM",
+      "preco": 807,
+      "marca": "NOS"
+    },
+    {
+      "_id": "884dc6cc-b491-437a-9599-65b84669db14",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "J-3DA",
+      "preco": 322,
+      "marca": "Whirlpool"
+    },
+    {
+      "_id": "9aaca2e2-6c18-4bd2-b1ab-f7dc78ed2839",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Aspirador",
+      "modelo": "DA84J",
+      "preco": 95,
+      "marca": "Beko"
+    },
+    {
+      "_id": "fc8d72bf-77a0-4342-9eb6-8583d98df4e9",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Aspirador",
+      "modelo": "7AJ83",
+      "preco": 94,
+      "marca": "Beko"
+    },
+    {
+      "_id": "3b48d4c0-3d6d-426a-9769-c6b4485bfc1a",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "L321",
+      "preco": 534,
+      "marca": "AEG"
+    },
+    {
+      "_id": "fa5f889a-0105-46a1-ab76-e43b13b293b5",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Aspirador",
+      "modelo": "7AJ83",
+      "preco": 78,
+      "marca": "Hoover"
+    },
+    {
+      "_id": "086d67ba-1c81-4627-8782-3c7c1958e3c5",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "91-RJW",
+      "preco": 437,
+      "marca": "Siemens"
+    },
+    {
+      "_id": "74fbd0c6-4a24-4bdd-bda1-5dd4e0cc92ac",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "JSA3K-32",
+      "preco": 558,
+      "marca": "AEG"
+    },
+    {
+      "_id": "3f35cd46-cc48-4a65-923b-1ffce6a58fcf",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "M543",
+      "preco": 376,
+      "marca": "AEG"
+    },
+    {
+      "_id": "4b6f1bd8-0471-43c6-aa50-f59aa06fe1a5",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "R456",
+      "preco": 224,
+      "marca": "Beko"
+    },
+    {
+      "_id": "0c9f5418-a27e-4e5c-bef2-3606f711952c",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "L321",
+      "preco": 364,
+      "marca": "Siemens"
+    },
+    {
+      "_id": "58ee1837-3ea8-4e79-b971-e422709b8894",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "ES-23D",
+      "preco": 383,
+      "marca": "Lindy"
+    },
+    {
+      "_id": "69c86998-bdc7-4beb-a891-5d462a22b7e0",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "34D-AD4",
+      "preco": 186,
+      "marca": "Whirlpool"
+    },
+    {
+      "_id": "322f1fa3-c024-4d05-b67a-86cac4d85ec5",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "R456",
+      "preco": 306,
+      "marca": "Miele"
+    },
+    {
+      "_id": "a052e75d-ce01-45a3-90c4-95f0e828ea64",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "0ND-2D",
+      "preco": 494,
+      "marca": "Beko"
+    },
+    {
+      "_id": "f075f900-38e7-4491-a9b1-63b1f896afa0",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "M543",
+      "preco": 685,
+      "marca": "Indesit"
+    },
+    {
+      "_id": "b3eacbe9-8808-4cfa-aaaf-00ca73c4d516",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "R456",
+      "preco": 397,
+      "marca": "Beko"
+    },
+    {
+      "_id": "d76d3783-1a23-41d3-8554-dcc1faa5969b",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "34D-AD4",
+      "preco": 107,
+      "marca": "Samsung"
+    },
+    {
+      "_id": "32184655-d5ac-44ef-ab1b-d974e40751e8",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "L321",
+      "preco": 789,
+      "marca": "Siemens"
+    },
+    {
+      "_id": "21a395d4-a84b-4f43-bdad-047a6ceeff16",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MicroOndas",
+      "modelo": "DKA72",
+      "preco": 194,
+      "marca": "LG"
+    },
+    {
+      "_id": "74f386dd-f4e2-40d4-b5a5-5a16ef6beed4",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "JDAS4",
+      "preco": 850,
+      "marca": "Sony"
+    },
+    {
+      "_id": "2e3ed50b-a404-4672-aa03-c50fe7d2d4d4",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "9DAS-A",
+      "preco": 635,
+      "marca": "Sony"
+    },
+    {
+      "_id": "724178ca-d401-492d-aa68-cb2f1ea882e2",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "85D-12S",
+      "preco": 517,
+      "marca": "Sony"
+    },
+    {
+      "_id": "3d3332e5-8627-4116-95d4-95e674b9329a",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Frigorifico",
+      "modelo": "ODA93",
+      "preco": 343,
+      "marca": "Whirlpool"
+    },
+    {
+      "_id": "3ee9c546-99ca-473a-a788-25d5496b9834",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "MaquinaRoupa",
+      "modelo": "M543",
+      "preco": 367,
+      "marca": "Siemens"
+    },
+    {
+      "_id": "2713317d-f078-4f24-92e7-778c473fa29a",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg",
+      "tipo": "Televisao",
+      "modelo": "85D-12S",
+      "preco": 952,
+      "marca": "Sony"
+    }
+  ]

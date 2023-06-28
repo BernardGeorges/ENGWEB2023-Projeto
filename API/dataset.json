@@ -1,0 +1,402 @@
+[
+    {
+      "idProduto": "36f5c903-950b-4c51-b850-1c3b4c269898",
+      "tipo": "Frigorifico",
+      "modelo": "R456",
+      "preco": 314,
+      "marca": "Electrolux",
+      "imagem": "https://www.elitedigital.pt/950348-medium_default/samsung-frigorifico-combinado-com-dispensador-agua-341l.jpg"
+    },
+    {
+      "idProduto": "04444276-cdb9-4cd1-bd23-bd7c4a917465",
+      "tipo": "MaquinaRoupa",
+      "modelo": "W789",
+      "preco": 503,
+      "marca": "Siemens",
+      "imagem": "https://www.prinfor.pt/628483-large_default/maquina-lavar-roupa-lg-f4wv9010p2w-60-cm.jpg"
+    },
+    {
+      "idProduto": "b78c007f-fdbe-454d-84f1-e6593713870d",
+      "tipo": "Frigorifico",
+      "modelo": "0ND-2D",
+      "preco": 394,
+      "marca": "Beko",
+      "imagem": "https://www.elitedigital.pt/950348-medium_default/samsung-frigorifico-combinado-com-dispensador-agua-341l.jpg"
+    },
+    {
+      "idProduto": "8d461370-b2bc-475b-a074-7b06688359e6",
+      "tipo": "Televisao",
+      "modelo": "JDAS4",
+      "preco": 783,
+      "marca": "LG",
+      "imagem": "https://media.deco.proteste.pt/images/8F5472F8BD4AAEE351556351777619A231686525/w600-c4/Televisores-LG-43NANO766QA.jpg"
+    },
+    {
+      "idProduto": "f714b2f6-49ad-40c1-9588-c3908f26a7e0",
+      "tipo": "Frigorifico",
+      "modelo": "0ND-2D",
+      "preco": 231,
+      "marca": "Whirlpool",
+      "imagem": "https://www.aitekshop.pt/1273-home_default/frigorifico-americano-lg-gmx945mc9f-no-frost-1793-cm-563-l-preto.jpg"
+    },
+    {
+      "idProduto": "0765a80c-89af-404f-b7f6-39f3266f8ae1",
+      "tipo": "MaquinaRoupa",
+      "modelo": "L321",
+      "preco": 358,
+      "marca": "Siemens",
+      "imagem": "https://static.pcdiga.com/media/catalog/product/cache/4a9972e1440204cef7cf19ceb7c4fc35/e/w/ewc-71252-w-spt-n-lavadoras-1.jpg"
+    },
+    {
+      "idProduto": "3da52ef3-ea2b-414c-8dd5-d54d28b52067",
+      "tipo": "Aspirador",
+      "modelo": "5T9JK",
+      "preco": 90,
+      "marca": "Talus",
+      "imagem": "https://haiceland.com/wp-content/uploads/2023/01/10.jpg"
+    },
+    {
+      "idProduto": "b2738771-8b90-4145-84ce-e8c4ae6d8d31",
+      "tipo": "Aspirador",
+      "modelo": "DA84J",
+      "preco": 90,
+      "marca": "Hoover",
+      "imagem": "https://img.pccomponentes.com/articles/29/291793/1902-rowenta-silence-force-cyclonic-parque-aspirador-sin-bolsa-69-db-550w-review.jpg"
+    },
+    {
+      "idProduto": "40deec96-1f45-47ff-8cd4-7cb415c2b23d",
+      "tipo": "Frigorifico",
+      "modelo": "F123",
+      "preco": 369,
+      "marca": "Miele",
+      "imagem": "https://www.aitekshop.pt/1273-home_default/frigorifico-americano-lg-gmx945mc9f-no-frost-1793-cm-563-l-preto.jpg"
+    },
+    {
+      "idProduto": "250b5bb9-774d-4c0e-81ec-501a85075691",
+      "tipo": "Aspirador",
+      "modelo": "7M2ZP",
+      "preco": 75,
+      "marca": "Beko",
+      "imagem": "https://haiceland.com/wp-content/uploads/2023/01/10.jpg"
+    },
+    {
+      "idProduto": "dec22b52-843f-4cf5-b8b6-5b12dc8299e2",
+      "tipo": "MicroOndas",
+      "modelo": "34D-AD4",
+      "preco": 135,
+      "marca": "LG",
+      "imagem": "https://www.worten.pt/i/7a402a1c9451b1e3bfef6ffcb1243b7915396c3f.jpg"
+    },
+    {
+      "idProduto": "30b4e4e8-1622-4e0f-995b-c4f45c196b29",
+      "tipo": "Aspirador",
+      "modelo": "7M2ZP",
+      "preco": 96,
+      "marca": "Beko",
+      "imagem": "https://static.fnac-static.com/multimedia/Images/PT/NR/80/0d/13/1248640/1540-1/tsp20171107122156/Aspirador-com-Saco-Rowenta-Compact-Power.jpg"
+    },
+    {
+      "idProduto": "1ddfe43c-39d8-44d1-8328-b65d00bbbc14",
+      "tipo": "Aspirador",
+      "modelo": "7AJ83",
+      "preco": 53,
+      "marca": "Beko",
+      "imagem": "https://static.fnac-static.com/multimedia/Images/PT/NR/80/0d/13/1248640/1540-1/tsp20171107122156/Aspirador-com-Saco-Rowenta-Compact-Power.jpg"
+    },
+    {
+      "idProduto": "90650051-ae93-40eb-8daa-44a058718d17",
+      "tipo": "MaquinaRoupa",
+      "modelo": "W789",
+      "preco": 712,
+      "marca": "Siemens",
+      "imagem": "https://mediamarkt.pt/cdn/shop/products/Z9_1024x1024.jpg"
+    },
+    {
+      "idProduto": "31163705-09a4-46e7-9ac4-5c7e82f1cdf2",
+      "tipo": "Televisao",
+      "modelo": "85D-12S",
+      "preco": 368,
+      "marca": "Lindy",
+      "imagem": "https://media.deco.proteste.pt/images/8F5472F8BD4AAEE351556351777619A231686525/w600-c4/Televisores-LG-43NANO766QA.jpg"
+    },
+    {
+      "idProduto": "888e9f53-4b5e-47ed-8455-7e16cbcc34fb",
+      "tipo": "Aspirador",
+      "modelo": "5T9JK",
+      "preco": 52,
+      "marca": "Hoover",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg"
+    },
+    {
+      "idProduto": "12efc28c-7c05-42d8-8b3b-7089e8016ed8",
+      "tipo": "Televisao",
+      "modelo": "9DAS-A",
+      "preco": 494,
+      "marca": "LG",
+      "imagem": "https://www.on4tech.pt/files/products/284026_1.jpg"
+    },
+    {
+      "idProduto": "2f27cc0a-c6a6-4b6c-a468-e041390dee20",
+      "tipo": "MaquinaRoupa",
+      "modelo": "M543",
+      "preco": 758,
+      "marca": "AEG",
+      "imagem": "https://mediamarkt.pt/cdn/shop/products/Z9_1024x1024.jpg"
+    },
+    {
+      "idProduto": "462eca8e-a4cd-4d63-8619-0446e3fea6d7",
+      "tipo": "Aspirador",
+      "modelo": "5T9JK",
+      "preco": 77,
+      "marca": "Hoover",
+      "imagem": "https://haiceland.com/wp-content/uploads/2023/01/10.jpg"
+    },
+    {
+      "idProduto": "4429daef-9dc0-4f6a-b3d3-cd6adfe19a34",
+      "tipo": "Frigorifico",
+      "modelo": "J-3DA",
+      "preco": 356,
+      "marca": "Electrolux",
+      "imagem": "https://www.aitekshop.pt/1273-home_default/frigorifico-americano-lg-gmx945mc9f-no-frost-1793-cm-563-l-preto.jpg"
+    },
+    {
+      "idProduto": "921528a0-1a52-4ab1-afcd-0e26ed6f0ffc",
+      "tipo": "Televisao",
+      "modelo": "ES-23D",
+      "preco": 365,
+      "marca": "Sony",
+      "imagem": "https://www.on4tech.pt/files/products/284026_1.jpg"
+    },
+    {
+      "idProduto": "e72452d8-7fac-4e61-af6e-a129838e44f2",
+      "tipo": "Frigorifico",
+      "modelo": "ODA93",
+      "preco": 306,
+      "marca": "Electrolux",
+      "imagem": "https://www.elitedigital.pt/950348-medium_default/samsung-frigorifico-combinado-com-dispensador-agua-341l.jpg"
+    },
+    {
+      "idProduto": "3d9c6cb2-ff33-40fb-9850-c796332f1239",
+      "tipo": "Aspirador",
+      "modelo": "7M2ZP",
+      "preco": 80,
+      "marca": "Hoover",
+      "imagem": "https://img.pccomponentes.com/articles/29/291793/1902-rowenta-silence-force-cyclonic-parque-aspirador-sin-bolsa-69-db-550w-review.jpg"
+    },
+    {
+      "idProduto": "bca13a61-1290-446a-a228-d154343f2352",
+      "tipo": "MaquinaRoupa",
+      "modelo": "91-RJW",
+      "preco": 418,
+      "marca": "Indesit",
+      "imagem": "https://lojae-s3-prd-files.radiopopular.pt/files/static/images/products/83386_0.jpg"
+    },
+    {
+      "idProduto": "3fb91c14-3c94-498a-af36-99ed7c4e2755",
+      "tipo": "Frigorifico",
+      "modelo": "ODA93",
+      "preco": 312,
+      "marca": "Beko",
+      "imagem": "https://youget.pt/100650-large_default/frigorifico-americano-samsung-627l-preto-rh68b8821b1.jpg"
+    },
+    {
+      "idProduto": "ad5b52ae-9397-468d-9427-a57546665c0d",
+      "tipo": "Frigorifico",
+      "modelo": "F123",
+      "preco": 269,
+      "marca": "Whirlpool",
+      "imagem": "https://www.aitekshop.pt/1273-home_default/frigorifico-americano-lg-gmx945mc9f-no-frost-1793-cm-563-l-preto.jpg"
+    },
+    {
+      "idProduto": "82d4aa05-6a30-45e9-a18c-0398878b0da4",
+      "tipo": "Frigorifico",
+      "modelo": "0ND-2D",
+      "preco": 390,
+      "marca": "Whirlpool",
+      "imagem": "https://www.elitedigital.pt/950348-medium_default/samsung-frigorifico-combinado-com-dispensador-agua-341l.jpg"
+    },
+    {
+      "idProduto": "bf40b9ce-222b-4a75-b56a-5876f4ecd543",
+      "tipo": "Frigorifico",
+      "modelo": "F123",
+      "preco": 264,
+      "marca": "Electrolux",
+      "imagem": "https://www.elitedigital.pt/950348-medium_default/samsung-frigorifico-combinado-com-dispensador-agua-341l.jpg"
+    },
+    {
+      "idProduto": "ef2985ac-a134-4310-946d-5961cfd68eda",
+      "tipo": "MaquinaRoupa",
+      "modelo": "M543",
+      "preco": 773,
+      "marca": "AEG",
+      "imagem": "https://www.prinfor.pt/628483-large_default/maquina-lavar-roupa-lg-f4wv9010p2w-60-cm.jpg"
+    },
+    {
+      "idProduto": "47c3d065-c219-402c-ab28-98fb1fbe9225",
+      "tipo": "Frigorifico",
+      "modelo": "ODA93",
+      "preco": 472,
+      "marca": "Whirlpool",
+      "imagem": "https://www.lg.com/pt/images/frigorificos/md07504043/gallery/medium01.jpg"
+    },
+    {
+      "idProduto": "f4d105bd-2bb2-4a8d-9ea6-3b1303fdeee4",
+      "tipo": "MaquinaRoupa",
+      "modelo": "JSA3K-32",
+      "preco": 533,
+      "marca": "AEG",
+      "imagem": "https://static.pcdiga.com/media/catalog/product/cache/4a9972e1440204cef7cf19ceb7c4fc35/e/w/ewc-71252-w-spt-n-lavadoras-1.jpg"
+    },
+    {
+      "idProduto": "b6255ac6-300f-4119-bc73-fbfe36b64aa6",
+      "tipo": "MaquinaRoupa",
+      "modelo": "JSA3K-32",
+      "preco": 697,
+      "marca": "Indesit",
+      "imagem": "https://lojae-s3-prd-files.radiopopular.pt/files/static/images/products/83386_0.jpg"
+    },
+    {
+      "idProduto": "ba96c3bd-d012-428b-9268-2df75a67616a",
+      "tipo": "MicroOndas",
+      "modelo": "I313",
+      "preco": 125,
+      "marca": "LG",
+      "imagem": "https://d15v10x8t3bz3x.cloudfront.net/Immagini/2022/6/16564998/640-1_38000995_20_01_f_cmga31edlb-M.jpg"
+    },
+    {
+      "idProduto": "71e0de00-eadd-4c47-9fc8-46dd0f4be1da",
+      "tipo": "Frigorifico",
+      "modelo": "0ND-2D",
+      "preco": 406,
+      "marca": "Miele",
+      "imagem": "https://www.elitedigital.pt/950348-medium_default/samsung-frigorifico-combinado-com-dispensador-agua-341l.jpg"
+    },
+    {
+      "idProduto": "f74615ce-3e0e-4f6a-8d44-f2d3abc97151",
+      "tipo": "Frigorifico",
+      "modelo": "ODA93",
+      "preco": 355,
+      "marca": "Whirlpool",
+      "imagem": "https://www.lg.com/pt/images/frigorificos/md07504043/gallery/medium01.jpg"
+    },
+    {
+      "idProduto": "7c7ff39d-d847-47d7-bc00-68f5171fae2b",
+      "tipo": "Aspirador",
+      "modelo": "5T9JK",
+      "preco": 65,
+      "marca": "Talus",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg"
+    },
+    {
+      "idProduto": "e43f040b-3490-4946-ab46-f659c386cff9",
+      "tipo": "MicroOndas",
+      "modelo": "DKA72",
+      "preco": 184,
+      "marca": "LG",
+      "imagem": "https://www.auchan.pt/dw/image/v2/BFRC_PRD/on/demandware.static/-/Sites-auchan-pt-master-catalog/default/dwaf4da8d9/images/hi-res/003222436.jpg"
+    },
+    {
+      "idProduto": "44ae4ab2-518d-4991-81c0-58bf22fe3ec8",
+      "tipo": "Frigorifico",
+      "modelo": "F123",
+      "preco": 282,
+      "marca": "Whirlpool",
+      "imagem": "https://www.lg.com/pt/images/frigorificos/md07504043/gallery/medium01.jpg"
+    },
+    {
+      "idProduto": "b4ade388-6df5-40be-bd02-d0c8d299c690",
+      "tipo": "Televisao",
+      "modelo": "ES-23D",
+      "preco": 555,
+      "marca": "Lindy",
+      "imagem": "https://www.tradeinn.com/f/13843/138437806/xiaomi-televisao-mi-tv-p1-43-uhd-led.jpg"
+    },
+    {
+      "idProduto": "761324c9-49b2-40aa-b570-3a19c9984623",
+      "tipo": "Frigorifico",
+      "modelo": "K789",
+      "preco": 403,
+      "marca": "Miele",
+      "imagem": "https://www.elitedigital.pt/950348-medium_default/samsung-frigorifico-combinado-com-dispensador-agua-341l.jpg"
+    },
+    {
+      "idProduto": "4c3edb37-0e49-42fa-8fef-82f07c1de2f7",
+      "tipo": "Televisao",
+      "modelo": "JDAS4",
+      "preco": 859,
+      "marca": "Lindy",
+      "imagem": "https://media.deco.proteste.pt/images/8F5472F8BD4AAEE351556351777619A231686525/w600-c4/Televisores-LG-43NANO766QA.jpg"
+    },
+    {
+      "idProduto": "6c8d4390-82e2-478b-af3c-ed0121b18b05",
+      "tipo": "Aspirador",
+      "modelo": "7AJ83",
+      "preco": 34,
+      "marca": "Beko",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg"
+    },
+    {
+      "idProduto": "293232fd-a912-4244-a624-c2045256be55",
+      "tipo": "Aspirador",
+      "modelo": "7JMN-3O",
+      "preco": 95,
+      "marca": "Beko",
+      "imagem": "https://www.worten.pt/i/618416e511be5eb27bd2c272a44cdfd98b0d99d1.jpg"
+    },
+    {
+      "idProduto": "a6ab3eb5-5db6-4127-8e37-7e9ff8d256a1",
+      "tipo": "Televisao",
+      "modelo": "9DAS-A",
+      "preco": 318,
+      "marca": "LG",
+      "imagem": "https://www.tradeinn.com/f/13843/138437806/xiaomi-televisao-mi-tv-p1-43-uhd-led.jpg"
+    },
+    {
+      "idProduto": "57018847-ed2d-4178-95d7-09fa94f61d71",
+      "tipo": "Aspirador",
+      "modelo": "3R8XS",
+      "preco": 80,
+      "marca": "Talus",
+      "imagem": "https://haiceland.com/wp-content/uploads/2023/01/10.jpg"
+    },
+    {
+      "idProduto": "a29de9dc-c29f-4b24-9ab0-53d0c6cd12e9",
+      "tipo": "Frigorifico",
+      "modelo": "K789",
+      "preco": 456,
+      "marca": "Beko",
+      "imagem": "https://www.lg.com/pt/images/frigorificos/md07504043/gallery/medium01.jpg"
+    },
+    {
+      "idProduto": "04734732-a0e8-43be-bc45-058a82df41f6",
+      "tipo": "MaquinaRoupa",
+      "modelo": "SA-4AE",
+      "preco": 726,
+      "marca": "AEG",
+      "imagem": "https://lojae-s3-prd-files.radiopopular.pt/files/static/images/products/83386_0.jpg"
+    },
+    {
+      "idProduto": "02136352-1afb-4551-9ec9-50a9f1718b4f",
+      "tipo": "MicroOndas",
+      "modelo": "DA4-1D",
+      "preco": 112,
+      "marca": "LG",
+      "imagem": "https://www.auchan.pt/dw/image/v2/BFRC_PRD/on/demandware.static/-/Sites-auchan-pt-master-catalog/default/dwaf4da8d9/images/hi-res/003222436.jpg"
+    },
+    {
+      "idProduto": "d1e6fb76-1b2f-4a27-9cc0-4e18d36ca0a9",
+      "tipo": "MicroOndas",
+      "modelo": "1D5RM",
+      "preco": 165,
+      "marca": "Whirlpool",
+      "imagem": "https://www.worten.pt/i/7a402a1c9451b1e3bfef6ffcb1243b7915396c3f.jpg"
+    },
+    {
+      "idProduto": "6eb1ac07-f927-4053-a38a-ae5cc0d077e7",
+      "tipo": "Televisao",
+      "modelo": "KASD-4",
+      "preco": 724,
+      "marca": "NOS",
+      "imagem": "https://www.tradeinn.com/f/13843/138437806/xiaomi-televisao-mi-tv-p1-43-uhd-led.jpg"
+    }
+]

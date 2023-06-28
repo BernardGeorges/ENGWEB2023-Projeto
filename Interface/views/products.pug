@@ -1,44 +1,50 @@
 extends layout
 
 block content
-  - const head = {"display": "inline-block","margin-left": "5%"}
-  - const divs = {"display": "inline-block","margin-left": "2.5%"}
-  header.w3-light-grey.w3-card.w3-inter(style = "width : 100%; position: sticky; top: 0; z-index:9999")
-    a.w3-text-deep-orange(href="/")
-      img(src="/images/logo1.2.png" width="15%" height="auto" style = head)
-    h4.w3-inter(style=divs)
-      a(href="/prod")  Products
-    h4.w3-inter(style=divs)
-      a(href="/contacts") Contacts
-    - const btn1 = {"display": "inline-block","margin-right": "5%", "margin-top": "2.4%"}
-    a(href="/login" class="w3-center-text w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style=btn1) Log in
+  - const head = {"display": "inline-block", "margin-left": "25px"}
+  header.w3-light-grey.w3-card(style="width: 100%; position: sticky; top: 0; z-index: 9999")
+    img(src="/images/logo1.2.png", width="250", height="auto", style=head)
+    h4(style=head)
+      a(href="/") Home
+    h4(style=head)
+      a(href="/prod") Products
+    h4(style=head)
+      a(href="/services") Services
+    h4(style=head)
+      a.w3-text-deep-orange(href="/contacts") Contacts
+    - const btn1 = {"display": "inline-block", "margin-top": "30px", "margin-bottom": "10px", "margin-right": "80px", "margin-left": "10px"}
+    a(href="/login", class="w3-center-text w3-button w3-deep-orange w3-border w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey", style=btn1) Log in
+
+
   .w3-row
-    .w3-col(style="width: 12.5%")
+    .w3-col(style="width: 15%")
       .w3-container.w3-deep-orange.w3-center 
-        a(href="#" class="w3-bar-item w3-button") Preço(mais baixo) 
-        a(href="#" class="w3-bar-item w3-button") Preço(mais altos)
+        - console.log(selectedTypes)
+        a(href="/prod/precobaixo?selectedTypes="+selectedTypes.join(',') class="w3-bar-item w3-button") Preço (mais baixo)
+        a(href="/prod/precoalto?selectedTypes="+selectedTypes.join(',') class="w3-bar-item w3-button") Preço(mais altos)
         p 
-          b TIPO 
-        form(action="/register" method="POST" style = "height: 100%")
+          b 
+        form(action="/prod/filter" method="POST" style = "height: 100%")
             fieldset.w3-card.w3-padding-large.w3-border.w3-border-deep-orange
               each tipo in tipos 
-                input.w3-check(type="checkbox")
-                label tipo 
+                div.w3-row
+                  input.w3-check(type="checkbox" name=tipo, checked=selectedTypes && selectedTypes.includes(tipo))
+                  label #{tipo}
             .w3-center(style = "margin-top: 20px; margin-bottom: 10px")
-              input.w3-button.w3-round-xxlarge.w3-hover-light-grey.w3-hover-text-deep-orange.w3-text-light-grey(type="submit" value="Filter" style = "width: 40%; font-weight:600")
+              button.w3-button.w3-round-xxlarge.w3-hover-light-grey.w3-hover-text-deep-orange.w3-text-light-grey(type="submit" value="Filter" style = "width: 40%; font-weight:600")
+
     .w3-col(style="width: 75%")
       .w3-card
         .w3-row-padding
-          - const products = [{ name: "Product 1", image: "/images/loja.jpeg", description: "Description of Product 1", price: 50.1, marca: "Robenta" }] 
-          each product in products
-            .w3-quarter
-              .w3-margin
-                .product-container
-                  img(src=product.image, style="width: 100%")
-                  .product-overlay
-                    h4.product-name #{product.name}
-                    p.product-description #{product.description}
-                    p.product-price #{product.price}
+          each product in produtos
+            .w3-quarter.w3-margin
+              .product-container(style="display: flex; justify-content: center; align-items: center; height: 200px;")
+                img(src=product.imagem, style="max-width: 100%; max-height: 100%; object-fit: contain;")
+                .product-overlay
+                  h4.product-name #{product.name}
+                  p
+                  p.product-description #{product.marca}
+                  p.product-price #{product.preco}
 
     .w3-col(style="width: 12.5%")
       p
