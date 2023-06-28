@@ -35,7 +35,7 @@ router.post('/register', function(req, res) {
                     res.jsonp({error: err, message: "Register error: " + err})
                   else{
                     passport.authenticate("local")(req,res,function(){
-                      jwt.sign({ username: req.user.username, 
+                      jwt.sign({ name: req.user.username, 
                         sub: 'Projeto de EngWeb2023'}, 
                         "EWProjeto2023",
                         {expiresIn: 3600},

@@ -7,17 +7,21 @@ block content
     a.w3-text-deep-orange(href="/")
       img(src="/images/logo1.2.png" width="15%" height="auto" style = head)
     h4.w3-inter(style=divs)
-      a(href="/prod")  Products
+      a(href="/prod" style="text-decoration:none")  Products
     h4.w3-inter(style=divs)
-      a(href="/contacts") Contacts
-    - const btn1 = {"display": "inline-block","margin-right": "5%", "margin-top": "2.4%"}
-    a(href="/login" class="w3-center-text w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style=btn1) Log in
+      a(href="/contacts" style="text-decoration:none") Contacts
+    if token
+      - const btn1 = {"display": "inline-block","margin-right": "5%", "margin-top": "2.4%"}
+      a(href="/login" class="w3-center-text w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style=btn1) Log in
+    else 
+      - const btn1 = {"display": "inline-block","margin-right": "5%", "margin-top": "2.4%"}
+      a(href="/logout" class="w3-center-text w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style=btn1) Log out
   .w3-row.w3-inter
     .w3-col(style = "width:12.5%")
       p 
     .w3-col(style = "width:75%")
       .w3-display-container.w3-center
-        img(src="/images/felicidade.png" style="width:100%; height: 85vh")
+        img(src="/images/felicidade.png" style="width:100%; height: 100%")
         .w3-padding.w3-display-leftmiddle.w3-xlarge.w3-text-deep-orange Paulo Pereira e Pinto - Confiança e Experiência em cada serviço
       h1.w3-inter
         b.w3-border-deep-orange.w3-margin(style="border-bottom-width: 5px !important; border-bottom-style: solid !important") NOSSOS SERVIÇOS

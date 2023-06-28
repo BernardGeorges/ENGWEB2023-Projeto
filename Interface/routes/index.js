@@ -11,11 +11,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/contacts', function(req, res, next) {
-  res.render('contacts', {});
-});
-
-router.get('/services', function(req, res, next) {
-  res.render('contacts', {});
+  res.render('contacts', {login: token});
 });
 
 router.get('/prod', function(req, res, next) {
@@ -33,7 +29,7 @@ router.get('/login', function(req, res){
 router.post('/login', function(req, res){
   axios.post('http://localhost:7013/users/login', req.body)
     .then(response => {
-      res.cookie('token', response.data.token, {expires: 3600})
+      res.cookie('token', response.data.token, {expiresIn: 3600})
       res.redirect('/')
     })
     .catch(e =>{
@@ -41,9 +37,22 @@ router.post('/login', function(req, res){
     })
 })
 
+router.post('/register', function(req, res){
+  axios.post('http://localhost:7013/users/register', req.body)
+    .then(response => {
+      console.log(response)
+      res.cookie('token', response.data.token, {expiresIn: 3600})
+      res.redirect('/')
+    })
+    .catch(e =>{
+      console.log(e)
+      res.render('error', {error: e, message: "Credenciais inválidas"})
+    })
+})
+
 router.get('/logout', function(req, res){
   const expirationDate = new Date(0);
-  res.cookie('token', '', { expires: expirationDate });
+  res.cookie('token', '', { expiresIn: 0});
   res.redirect('/')
 })
 
