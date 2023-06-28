@@ -10,6 +10,83 @@ router.get('/', function(req, res, next) {
   res.render('home', {login: token});
 });
 
+router.get('/prod', function(req, res, next) {
+  var data = new Date().toISOString().substring(0, 16);
+
+  axios.get("http://localhost:7012/tipos")
+    .then(tipos => {
+      axios.get("http://localhost:7012/produtos")
+        .then(produtos => {
+          res.render('products', { tipos: tipos.data, produtos: produtos.data, selectedTypes: []});
+        })
+        .catch(erro => {
+          res.render('error', { error: erro, message: "Erro a obter lista de produtos" });
+        });
+    })
+    .catch(erro => {
+      res.render('error', { error: erro, message: "Erro a obter lista de tipos" });
+    });
+});
+
+
+router.get('/prod/precobaixo', function(req, res, next) {
+  var data = new Date().toISOString().substring(0, 16);
+  axios.get("http://localhost:7012/tipos")
+    .then(tipos => {
+      axios.get("http://localhost:7012/precobaixo?tipos="+req.query.selectedTypes)
+        .then(produtos => {
+          res.render('products', { tipos: tipos.data, produtos: produtos.data, selectedTypes: req.query.selectedTypes.split(",") });
+        })
+        .catch(erro => {
+          res.render('error', { error: erro, message: "Erro a obter lista de produtos" });
+        });
+    })
+    .catch(erro => {
+      res.render('error', { error: erro, message: "Erro a obter lista de tipos" });
+    });
+});
+
+router.get('/prod/precoalto', function(req, res, next) {
+  var data = new Date().toISOString().substring(0, 16);
+
+  axios.get("http://localhost:7012/tipos")
+    .then(tipos => {
+      axios.get("http://localhost:7012/precoalto?tipos="+req.query.selectedTypes)
+        .then(produtos => {
+          res.render('products', { tipos: tipos.data, produtos: produtos.data, selectedTypes: req.query.selectedTypes.split(",") });
+        })
+        .catch(erro => {
+          res.render('error', { error: erro, message: "Erro a obter lista de produtos" });
+        });
+    })
+    .catch(erro => {
+      res.render('error', { error: erro, message: "Erro a obter lista de tipos" });
+    });
+});
+
+router.post('/prod/filter', function(req, res, next) {
+  const selectedTypes = Object.keys(req.body);
+  const apiUrl = 'http://localhost:7012/prod/filter';
+
+  axios.get("http://localhost:7012/tipos")
+    .then(tipos => {  
+      axios.post(apiUrl, { tipos: selectedTypes })
+        .then(response => {
+          const filteredProducts = response.data;
+          res.render('products', { produtos: filteredProducts, tipos: tipos.data, selectedTypes: selectedTypes });
+        })
+        .catch(error => {
+          res.render('error', { error: error, message: 'Erro ao obter produtos filtrados' });
+        });
+    })
+    .catch(erro => {
+      res.render('error', { error: erro, message: "Erro a obter lista de tipos" });
+    });
+});
+
+
+
+
 router.get('/contacts', function(req, res, next) {
   res.render('contacts', {});
 });
