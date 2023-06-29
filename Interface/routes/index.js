@@ -103,6 +103,18 @@ router.get('/login', function(req, res){
   res.render('loginForm')
 })
 
+router.post('/add/form', function(req, res, next) {
+  const tipo = req.body.tipo;
+  const preco = req.body.preco;
+  const marca = req.body.marca;
+
+  console.log(tipo)
+  console.log(preco)
+  console.log(marca)
+
+  res.send('Formulário recebido com sucesso!');
+});
+
 router.post('/login', function(req, res){
   axios.post('http://localhost:7013/users/login', req.body)
     .then(response => {

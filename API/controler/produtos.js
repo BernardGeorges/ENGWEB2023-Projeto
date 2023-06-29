@@ -43,6 +43,18 @@ module.exports.getTipo = tipo => {
             })
 }
 
+module.exports.filter = function(ids) {
+    return Produto.find({ _id: { $in: ids } })
+      .sort('preco')
+      .then(resposta => {
+        return resposta;
+      })
+      .catch(erro => {
+        return erro;
+      });
+  };
+
+
 module.exports.marcas = () => {
     return Produto.distinct("marca")
             .then(resposta => {
