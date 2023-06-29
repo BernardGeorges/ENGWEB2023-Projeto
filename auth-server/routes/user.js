@@ -13,6 +13,25 @@ router.get('/', auth.verificaAcesso, function(req, res){
     .catch(e => res.status(500).jsonp({error: e}))
 })
 
+router.get('/admin', function(req, res){
+  var myToken = req.query.token || req.body.token
+  if(myToken){
+    jwt.verify(myToken, "EWProjeto2023", function(e, payload){
+      if(e){
+        res.status(401).jsonp({error: e})
+      }
+      else{
+        User.getUserByName(payload.username)
+            .then(dados => res.status(200).jsonp({dados: dados}))
+            .catch(e => res.status(500).jsonp({error: e}))
+      }
+    })
+  }
+  else{
+    res.status(401).jsonp({error: "Token inexistente!"})
+  }
+})
+
 router.get('/:id', auth.verificaAcesso, function(req, res){
   User.getUser(req.params.id)
     .then(dados => res.status(200).jsonp({dados: dados}))
@@ -35,13 +54,15 @@ router.post('/register', function(req, res) {
                     res.jsonp({error: err, message: "Register error: " + err})
                   else{
                     passport.authenticate("local")(req,res,function(){
-                      jwt.sign({ name: req.user.username, 
+                      jwt.sign({ username: req.user.username, 
                         sub: 'Projeto de EngWeb2023'}, 
                         "EWProjeto2023",
                         {expiresIn: 3600},
                         function(e, token) {
                           if(e) res.status(500).jsonp({error: "Erro na geração do token: " + e}) 
-                          else res.status(201).jsonp({token: token})
+                          else User.getUserByName(req.user.username)
+                                   .then(dados => res.status(201).jsonp({token: token, dados: dados}))
+                                   .catch(e => res.status(500).jsonp({error: e})) 
                         });
                     })
                   }     
@@ -49,19 +70,22 @@ router.post('/register', function(req, res) {
 })
   
 router.post('/login', passport.authenticate('local'), function(req, res){
-  jwt.sign({ name: req.user.username, sub: 'Projeto de EngWeb2023'}, 
+  jwt.sign({ username: req.user.username, sub: 'Projeto de EngWeb2023'}, 
     "EWProjeto2023",
     {expiresIn: 3600},
     function(e, token) {
       if(e) res.status(500).jsonp({error: "Erro na geração do token: " + e}) 
-      else res.status(201).jsonp({token: token})
+      else User.getUserByName(req.user.username)
+      .then(dados => res.status(201).jsonp({token: token, dados: dados}))
+      .catch(e => res.status(500).jsonp({error: e})) 
 });
 })
 
-router.put('/:id', auth.verificaAcesso, function(req, res) {
+router.put('/prod/addFavorito/:id', auth.verificaAcesso, function(req, res) {
+  console.log(req.query.token)
   User.updateUser(req.params.id, req.body)
     .then(dados => {
-      res.jsonp(dados)
+      res.status(200).jsonp(dados)
     })
     .catch(erro => {
       res.render('error', {error: erro, message: "Erro na alteração do utilizador"})
