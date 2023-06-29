@@ -1,23 +1,42 @@
 var express = require('express');
 var router = express.Router();
-var axios = require('axios')
+var axios = require('axios');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var token = true
-  if(req.cookies && req.cookies.token)
-    token = false
-  res.render('home', {login: token});
+  var signedin = true
+  if(req.cookies != null && req.cookies.token){
+    signedin = false
+  }
+  res.render('home', {login: signedin});
+});
+
+router.get('/perfil', function(req, res, next) {
+  axios.get("http://localhost:7013/users/admin?token="+req.cookies.token)
+    .then(tipos => {
+      console.log(tipos.data.dados.admin)
+      if(tipos.data.dados.admin){
+        res.render('perfilAdmin',{perfil: tipos.data.dados})
+      }else{
+        res.render('perfilUser',{perfil: tipos.data.dados})
+      }
+    })
+    .catch(erro => {
+      res.render('error', { error: erro, message: "Erro ao obter o user" });
+    });
 });
 
 router.get('/prod', function(req, res, next) {
   var data = new Date().toISOString().substring(0, 16);
-
   axios.get("http://localhost:7012/tipos")
     .then(tipos => {
       axios.get("http://localhost:7012/produtos")
         .then(produtos => {
-          res.render('products', { tipos: tipos.data, produtos: produtos.data, selectedTypes: []});
+          if(req.cookies && req.cookies.perfilUser && req.cookies.token){
+            res.render('products', { tipos: tipos.data, produtos: produtos.data, selectedTypes: [], perfil: req.cookies.perfilUser, login: false});
+          }else{
+            res.render('products', { tipos: tipos.data, produtos: produtos.data, selectedTypes: [], perfil: {}, login: true});
+          }
         })
         .catch(erro => {
           res.render('error', { error: erro, message: "Erro a obter lista de produtos" });
@@ -35,7 +54,7 @@ router.get('/prod/precobaixo', function(req, res, next) {
     .then(tipos => {
       axios.get("http://localhost:7012/precobaixo?tipos="+req.query.selectedTypes)
         .then(produtos => {
-          res.render('products', { tipos: tipos.data, produtos: produtos.data, selectedTypes: req.query.selectedTypes.split(",") });
+          res.render('products', { tipos: tipos.data, produtos: produtos.data, selectedTypes: req.query.selectedTypes.split(","), perfil: req.cookies.perfilUser});
         })
         .catch(erro => {
           res.render('error', { error: erro, message: "Erro a obter lista de produtos" });
@@ -53,7 +72,7 @@ router.get('/prod/precoalto', function(req, res, next) {
     .then(tipos => {
       axios.get("http://localhost:7012/precoalto?tipos="+req.query.selectedTypes)
         .then(produtos => {
-          res.render('products', { tipos: tipos.data, produtos: produtos.data, selectedTypes: req.query.selectedTypes.split(",") });
+          res.render('products', { tipos: tipos.data, produtos: produtos.data, selectedTypes: req.query.selectedTypes.split(","), perfil: req.cookies.perfilUser});
         })
         .catch(erro => {
           res.render('error', { error: erro, message: "Erro a obter lista de produtos" });
@@ -73,7 +92,7 @@ router.post('/prod/filter', function(req, res, next) {
       axios.post(apiUrl, { tipos: selectedTypes })
         .then(response => {
           const filteredProducts = response.data;
-          res.render('products', { produtos: filteredProducts, tipos: tipos.data, selectedTypes: selectedTypes });
+          res.render('products', { produtos: filteredProducts, tipos: tipos.data, selectedTypes: selectedTypes, perfil: req.cookies.perfilUser});
         })
         .catch(error => {
           res.render('error', { error: error, message: 'Erro ao obter produtos filtrados' });
@@ -84,11 +103,42 @@ router.post('/prod/filter', function(req, res, next) {
     });
 });
 
+router.get('/prod/removeFavorite/:id', function(req, res, next) {
+    req.cookies.perfilUser.wishlist.splice(req.cookies.perfilUser.wishlist.indexOf(req.params.id), 1);
+    res.cookie('perfilUser',req.cookies.perfilUser)
+    axios.put('http://localhost:7013/users/prod/addFavorito/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
+    .then(response => {
+      res.redirect('/prod');
+    })
+    .catch(e =>{
+      res.render('error', {error: e, message: "Erro ao adicionar o produto aos favoritos"})
+    })
+});
 
-
+router.get('/prod/addFavorite/:id', function(req, res, next) {
+  if(req.cookies && req.cookies.token && req.cookies.perfilUser){
+    console.log(req.cookies.perfilUser)
+    req.cookies.perfilUser.wishlist.push(req.params.id)
+    res.cookie('perfilUser',req.cookies.perfilUser)
+    console.log(req.cookies.perfilUser)
+    axios.put('http://localhost:7013/users/prod/addFavorito/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
+    .then(response => {
+      res.redirect('/prod');
+    })
+    .catch(e =>{
+      res.render('error', {error: e, message: "Erro ao adicionar o produto aos favoritos"})
+    })
+  }else{
+    res.redirect('/login');
+  }
+});
 
 router.get('/contacts', function(req, res, next) {
-  res.render('contacts', {login: token});
+  var signedin = true
+  if(req.cookies && req.cookies.token){
+    signedin = false
+  }
+  res.render('contacts', {login: signedin});
 });
 
 router.get('/prod', function(req, res, next) {
@@ -118,6 +168,10 @@ router.post('/add/form', function(req, res, next) {
 router.post('/login', function(req, res){
   axios.post('http://localhost:7013/users/login', req.body)
     .then(response => {
+      perfilUser = response.data.dados
+      res.cookie('perfilUser', response.data.dados, {expiresIn: 3600})
+      console.log("user")
+      console.log(req.cookies.perfilUser)
       res.cookie('token', response.data.token, {expiresIn: 3600})
       res.redirect('/')
     })
@@ -129,7 +183,9 @@ router.post('/login', function(req, res){
 router.post('/register', function(req, res){
   axios.post('http://localhost:7013/users/register', req.body)
     .then(response => {
-      console.log(response)
+      res.cookie('perfilUser', response.data.dados, {expiresIn: 3600})
+      console.log("user")
+      console.log(req.cookies.perfilUser)
       res.cookie('token', response.data.token, {expiresIn: 3600})
       res.redirect('/')
     })
@@ -141,7 +197,8 @@ router.post('/register', function(req, res){
 
 router.get('/logout', function(req, res){
   const expirationDate = new Date(0);
-  res.cookie('token', '', { expiresIn: 0});
+  res.clearCookie('token');
+  res.clearCookie('perfilUser')
   res.redirect('/')
 })
 
