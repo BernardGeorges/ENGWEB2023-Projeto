@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
   res.render('home', {login: signedin});
 });
 
-router.get('/perfil', function(req, res, next) {
+router.get('/perfil', function(req, res, next) {  
   axios.get("http://localhost:7013/users/admin?token="+req.cookies.token)
     .then(tipos => {
       console.log(tipos.data.dados.admin)
@@ -33,9 +33,9 @@ router.get('/prod', function(req, res, next) {
       axios.get("http://localhost:7012/produtos")
         .then(produtos => {
           if(req.cookies && req.cookies.perfilUser && req.cookies.token){
-            res.render('products', { tipos: tipos.data, produtos: produtos.data, selectedTypes: [], perfil: req.cookies.perfilUser, login: false});
+            res.render('productsUser', { tipos: tipos.data, produtos: produtos.data, selectedTypes: tipos.data , perfil: req.cookies.perfilUser, login: false});
           }else{
-            res.render('products', { tipos: tipos.data, produtos: produtos.data, selectedTypes: [], perfil: {}, login: true});
+            res.render('productsUser', { tipos: tipos.data, produtos: produtos.data, selectedTypes: tipos.data, perfil: {}, login: true});
           }
         })
         .catch(erro => {
@@ -54,7 +54,7 @@ router.get('/prod/precobaixo', function(req, res, next) {
     .then(tipos => {
       axios.get("http://localhost:7012/precobaixo?tipos="+req.query.selectedTypes)
         .then(produtos => {
-          res.render('products', { tipos: tipos.data, produtos: produtos.data, selectedTypes: req.query.selectedTypes.split(","), perfil: req.cookies.perfilUser});
+          res.render('productsUser', { tipos: tipos.data, produtos: produtos.data, selectedTypes: req.query.selectedTypes.split(","), perfil: req.cookies.perfilUser});
         })
         .catch(erro => {
           res.render('error', { error: erro, message: "Erro a obter lista de produtos" });
@@ -72,7 +72,7 @@ router.get('/prod/precoalto', function(req, res, next) {
     .then(tipos => {
       axios.get("http://localhost:7012/precoalto?tipos="+req.query.selectedTypes)
         .then(produtos => {
-          res.render('products', { tipos: tipos.data, produtos: produtos.data, selectedTypes: req.query.selectedTypes.split(","), perfil: req.cookies.perfilUser});
+          res.render('productsUser', { tipos: tipos.data, produtos: produtos.data, selectedTypes: req.query.selectedTypes.split(","), perfil: req.cookies.perfilUser});
         })
         .catch(erro => {
           res.render('error', { error: erro, message: "Erro a obter lista de produtos" });
@@ -91,8 +91,8 @@ router.post('/prod/filter', function(req, res, next) {
     .then(tipos => {  
       axios.post(apiUrl, { tipos: selectedTypes })
         .then(response => {
-          const filteredProducts = response.data;
-          res.render('products', { produtos: filteredProducts, tipos: tipos.data, selectedTypes: selectedTypes, perfil: req.cookies.perfilUser});
+          const filteredproducts = response.data;
+          res.render('productsUser', { produtos: filteredproducts, tipos: tipos.data, selectedTypes: selectedTypes, perfil: req.cookies.perfilUser});
         })
         .catch(error => {
           res.render('error', { error: error, message: 'Erro ao obter produtos filtrados' });
@@ -142,7 +142,7 @@ router.get('/contacts', function(req, res, next) {
 });
 
 router.get('/prod', function(req, res, next) {
-  res.render('products', {});
+  res.render('productsUser', {});
 });
 
 router.get('/register', function(req, res, next) {

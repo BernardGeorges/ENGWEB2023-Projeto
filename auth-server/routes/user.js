@@ -32,6 +32,12 @@ router.get('/admin', function(req, res){
   }
 })
 
+router.get('/perfil', auth.verificaAcesso, function(req, res){
+  User.getUserWishList(req.params.id)
+    .then(dados => res.status(200).jsonp({dados: dados}))
+    .catch(e => res.status(500).jsonp({error: e}))
+})
+
 router.get('/:id', auth.verificaAcesso, function(req, res){
   User.getUser(req.params.id)
     .then(dados => res.status(200).jsonp({dados: dados}))
