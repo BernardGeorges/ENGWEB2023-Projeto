@@ -106,7 +106,7 @@ router.post('/prod/filter', function(req, res, next) {
 router.get('/prod/removeFavorite/:id', function(req, res, next) {
     req.cookies.perfilUser.wishlist.splice(req.cookies.perfilUser.wishlist.indexOf(req.params.id), 1);
     res.cookie('perfilUser',req.cookies.perfilUser)
-    axios.put('http://localhost:7013/users/prod/addFavorito/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
+    axios.put('http://localhost:7013/users/prod/updateUser/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
     .then(response => {
       res.redirect('/prod');
     })
@@ -115,13 +115,31 @@ router.get('/prod/removeFavorite/:id', function(req, res, next) {
     })
 });
 
+router.get('/prod/addCart/:id', function(req, res, next) {
+  if(req.cookies && req.cookies.token && req.cookies.perfilUser){
+    console.log(req.cookies.perfilUser)
+    req.cookies.perfilUser.cart.push(req.params.id)
+    res.cookie('perfilUser',req.cookies.perfilUser)
+    console.log(req.cookies.perfilUser)
+    axios.put('http://localhost:7013/users/prod/updateUser/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
+    .then(response => {
+      res.redirect('/prod');
+    })
+    .catch(e =>{
+      res.render('error', {error: e, message: "Erro ao adicionar o produto ao carrinho"})
+    })
+  }else{
+    res.redirect('/login');
+  }
+});
+
 router.get('/prod/addFavorite/:id', function(req, res, next) {
   if(req.cookies && req.cookies.token && req.cookies.perfilUser){
     console.log(req.cookies.perfilUser)
     req.cookies.perfilUser.wishlist.push(req.params.id)
     res.cookie('perfilUser',req.cookies.perfilUser)
     console.log(req.cookies.perfilUser)
-    axios.put('http://localhost:7013/users/prod/addFavorito/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
+    axios.put('http://localhost:7013/users/prod/updateUser/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
     .then(response => {
       res.redirect('/prod');
     })
@@ -157,10 +175,10 @@ router.post('/login', function(req, res){
   axios.post('http://localhost:7013/users/login', req.body)
     .then(response => {
       perfilUser = response.data.dados
-      res.cookie('perfilUser', response.data.dados, {expiresIn: 3600})
+      res.cookie('perfilUser', response.data.dados, {expires: 3600})
       console.log("user")
       console.log(req.cookies.perfilUser)
-      res.cookie('token', response.data.token, {expiresIn: 3600})
+      res.cookie('token', response.data.token, {expires: 3600})
       res.redirect('/')
     })
     .catch(e =>{
@@ -171,10 +189,10 @@ router.post('/login', function(req, res){
 router.post('/register', function(req, res){
   axios.post('http://localhost:7013/users/register', req.body)
     .then(response => {
-      res.cookie('perfilUser', response.data.dados, {expiresIn: 3600})
+      res.cookie('perfilUser', response.data.dados, {expires: 3600})
       console.log("user")
       console.log(req.cookies.perfilUser)
-      res.cookie('token', response.data.token, {expiresIn: 3600})
+      res.cookie('token', response.data.token, {expires: 3600})
       res.redirect('/')
     })
     .catch(e =>{

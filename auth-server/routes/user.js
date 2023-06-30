@@ -81,14 +81,13 @@ router.post('/login', passport.authenticate('local'), function(req, res){
 });
 })
 
-router.put('/prod/addFavorito/:id', auth.verificaAcesso, function(req, res) {
-  console.log(req.query.token)
+router.put('/prod/updateUser/:id', auth.verificaAcesso, function(req, res) {
   User.updateUser(req.params.id, req.body)
     .then(dados => {
       res.status(200).jsonp(dados)
     })
     .catch(erro => {
-      res.render('error', {error: erro, message: "Erro na alteração do utilizador"})
+      res.status(404).jsonp({error: erro, message: "Erro na alteração do utilizador"})
     })
 })
 
