@@ -22,7 +22,9 @@ block content
                     img(src="/images/perfil.png" style="width: 50%")
                     h4 
                         b #{perfil.name}
-                
+                    each wishlist in perfil.wishlist
+                      img(src=wishlist.imagem) 
+   
     .w3-col(style = "width:75%")
       p
     .w3-col(style = "width:12.5%")

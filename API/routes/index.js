@@ -4,7 +4,7 @@ var Produto = require('../controler/produtos')
 
 /* GET home page. */
 router.get('/precobaixo', function(req, res, next) {  
-    Produto.filter(req.query.tipos.split(","))
+    Produto.filterUser(req.query.tipos.split(","))
     .then(Produtos=>{
       res.json(Produtos)
     })
@@ -14,7 +14,7 @@ router.get('/precobaixo', function(req, res, next) {
 });
 
 router.get('/precoalto', function(req, res, next) {
-  Produto.filter(req.query.tipos.split(","))
+  Produto.filterUser(req.query.tipos.split(","))
   .then(Produtos => {
       const ProdutosOrdenados = Produtos.reverse();
       res.json(ProdutosOrdenados);
@@ -45,7 +45,7 @@ router.get('/produtos', function(req, res, next) {
       })
   }
   else{
-    Produto.list()
+    Produto.listUser()
     .then(Produtos=>{
       res.json(Produtos)
     })
@@ -78,7 +78,7 @@ router.get('/tipos', function(req, res, next) {
 router.post('/prod/filter', function(req, res, next) {
 
   console.log(req.body.tipos)
-  Produto.filter(req.body.tipos)
+  Produto.filterUser(req.body.tipos)
   .then(Produtos=>{
     res.json(Produtos)
   })

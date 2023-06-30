@@ -25,6 +25,16 @@ module.exports.getUser = id => {
             })
 }
 
+module.exports.getUserWishList = id => {
+    return User.findOne({_id:id},{wishlist:1})
+            .then(resposta => {
+                return resposta
+            })
+            .catch(erro => {
+                return erro
+            })
+}
+
 module.exports.getUserByName = nome => {
     return User.findOne({username: nome},{username: 1,name:1,cart:1,history:1,wishlist:1,admin:1})
             .then(resposta => {
