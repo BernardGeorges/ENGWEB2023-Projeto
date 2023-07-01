@@ -3,6 +3,10 @@ var router = express.Router();
 var axios = require('axios');
 const { response } = require('../../API/app');
 
+// Mailjet API credentials
+const API_KEY = 'd4efdb7a9439a4b8f018501b9bed1353';
+const API_SECRET = '0b9526b9077f3af615df09cbf34e4ed2';
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var signedin = true
@@ -154,6 +158,50 @@ router.get('/prod/addFavorite/:id', function(req, res, next) {
   }else{
     res.redirect('/login');
   }
+});
+
+router.post('/contacts', function(req, res, next) {
+  const { nome, e_mail, message } = req.body;
+    try {
+      // Create the email data
+      const emailData = {
+        Messages: [
+          {
+            From: {
+              Email: 'miguelraposo000@gmail.com',
+              Name: nome 
+            },
+            To: [
+              {
+                
+                Email: 'miguelraposo000@gmail.com',
+                Name: nome,
+              }
+            ],
+            Subject: 'Pedido Cliente',
+            TextPart: 'Nome : '+nome+'\nE-mail : '+e_mail+'\nMensagem :'+message
+          }
+        ]
+      };
+  
+      // Send the email using Mailjet API
+      const response = axios.post('https://api.mailjet.com/v3.1/send', emailData, {
+        auth: {
+          username: API_KEY,
+          password: API_SECRET
+        }
+      });
+  
+      console.log('Email sent successfully!');
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error sending email:', error.response.data);
+    }
+  var signedin = true
+  if(req.cookies && req.cookies.token){
+    signedin = false
+  }
+  res.render('contacts', {login: signedin});
 });
 
 router.get('/contacts', function(req, res, next) {
