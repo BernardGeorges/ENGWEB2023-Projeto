@@ -2,7 +2,13 @@ extends layout
 
 block content
   - const head = {"display": "inline-block","margin-left": "5%"}
-  - const divs = {"display": "inline-block","margin-left": "2.5%"}
+  - const divs = {"display": "inline-block","margin-left": "2.5%"} 
+    //unless perfil.admin 
+    //  - var aux = []
+    //  each product in produtos
+    //    unless product.stock == 0
+    //      - aux.push(product)
+    //  - produtos = product
   header.w3-light-grey.w3-card.w3-inter(style = "width : 100%; position: sticky; top: 0; z-index:9999")
     a(href="/" )
       img(src="/images/logo1.2.png" width="15%" height="auto" style = head)
@@ -22,8 +28,13 @@ block content
     .w3-col(style="width: 15%")
       .w3-container.w3-deep-orange 
         - console.log(selectedTypes)
-        a(href="/prod/precobaixo?selectedTypes="+selectedTypes.join(',') class="w3-bar-item w3-button") Preço (mais baixo)
-        a(href="/prod/precoalto?selectedTypes="+selectedTypes.join(',') class="w3-bar-item w3-button") Preço(mais altos)
+        .w3-margin-top 
+          a(href="/prod/precobaixo?selectedTypes="+selectedTypes.join(',') class="w3-bar-item w3-button") Preço (mais baixo)
+        .w3-margin-top 
+          a(href="/prod/precoalto?selectedTypes="+selectedTypes.join(',') class="w3-bar-item w3-button") Preço(mais altos)
+        unless login
+          .w3-margin-top 
+            a(href="/prod/precoalto?selectedTypes="+selectedTypes.join(',') class="w3-bar-item w3-button") Favoritos
         p 
           b 
         form(action="/prod/filter" method="POST" style = "height: 100%")
@@ -38,23 +49,33 @@ block content
       .w3-card
         .w3-row-padding
           each product in produtos
-            .w3-third
+            .w3-third.w3-padding
               .product-container(style="display: flex; justify-content: center; align-items: center; height: 200px;")
                 img(src=product.imagem, style="max-width: 100%; max-height: 100%; object-fit: contain;")
                 .product-overlay.w3-inter
-                  p.product-description #{product.marca}
-                  p.product-price €#{product.preco}
-                  
-                  - var wish = false 
-                  if perfil.wishlist != null 
-                    - wish = perfil.wishlist.includes(product._id)
-                  if wish
-                    a.w3-center(href="/prod/removeFavorite/"+product._id)
-                      img(src="/images/favoritoSelected.png" style="width:50%")
-                  else
-                    a.w3-center(href="/prod/addFavorite/"+product._id)
-                      img(src="/images/favorito.png" style="width:50%")
+                  p.product-description(style="font-weight:1000; font-size: 125%; margin-block-start: 0em; margin-block-end: 0em") Marca: #{product.marca}
+                  p.product-price(style="font-weight:1000; font-size: 125%;") Preço: €#{product.preco}
+                  .w3-row(style="height: 15%")
+                    .w3-half(style="height: 100%")
+                      - var wish = false 
+                      if perfil.wishlist != null 
+                        - wish = perfil.wishlist.includes(product._id) 
+                      if wish
+                        a.w3-margin(href="/prod/removeFavorite/"+product._id)
+                          img(src="/images/favoritoSelected.png" style="width:auto; height: 100%")
+                      else
+                        a.w3-margin(href="/prod/addFavorite/"+product._id)
+                          img(src="/images/favorito.png" style="width:auto; height: 100%")
+                    .w3-half(style="height: 100%")
+                      - var inCart = false 
+                      if perfil.cart != null 
+                        - inCart = perfil.cart.includes(product._id) 
+                      if inCart
+                        a.w3-margin(href="/prod/addCart/"+product._id)
+                          img.w3-hide(src="/images/add-to-cart.png" style="width:auto; height: 100%")
+                      else
+                        a.w3-margin(href="/prod/addCart/"+product._id)
+                          img(src="/images/add-to-cart.png" style="width:auto; height: 100%")         
     .w3-col(style="width: 12.5%")
       p
-
   include footer.pug

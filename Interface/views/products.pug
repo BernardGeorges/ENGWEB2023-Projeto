@@ -57,9 +57,25 @@ block content
                   p.product-price(style="font-weight:1000; font-size: 125%;") Preço: €#{product.preco}
                   .w3-row(style="height: 15%")
                     .w3-half(style="height: 100%")
-                      a.w3-margin(href="/prod/edit/"+product._id) editar
+                      - var wish = false 
+                      if perfil.wishlist != null 
+                        - wish = perfil.wishlist.includes(product._id) 
+                      if wish
+                        a.w3-margin(href="/prod/removeFavorite/"+product._id)
+                          img(src="/images/favoritoSelected.png" style="width:auto; height: 100%")
+                      else
+                        a.w3-margin(href="/prod/addFavorite/"+product._id)
+                          img(src="/images/favorito.png" style="width:auto; height: 100%")
                     .w3-half(style="height: 100%")
-                      a.w3-margin(href="/prod/remove/"+product._id) remover     
+                      - var inCart = false 
+                      if perfil.cart != null 
+                        - inCart = perfil.cart.includes(product._id) 
+                      if inCart
+                        a.w3-margin(href="/prod/addCart/"+product._id)
+                          img.w3-hide(src="/images/add-to-cart.png" style="width:auto; height: 100%")
+                      else
+                        a.w3-margin(href="/prod/addCart/"+product._id)
+                          img(src="/images/add-to-cart.png" style="width:auto; height: 100%")         
     .w3-col(style="width: 12.5%")
       p
 

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var axios = require('axios');
+const { response } = require('../../API/app');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -33,7 +34,11 @@ router.get('/prod', function(req, res, next) {
       axios.get("http://localhost:7012/produtos")
         .then(produtos => {
           if(req.cookies && req.cookies.perfilUser && req.cookies.token){
-            res.render('productsUser', { tipos: tipos.data, produtos: produtos.data, selectedTypes: tipos.data , perfil: req.cookies.perfilUser, login: false});
+            if(req.cookies.perfilUser.admin){
+              res.render('productsAdmin', { tipos: tipos.data, produtos: produtos.data, selectedTypes: tipos.data , perfil: req.cookies.perfilUser, login: false});
+            }else{
+              res.render('productsUser', { tipos: tipos.data, produtos: produtos.data, selectedTypes: tipos.data , perfil: req.cookies.perfilUser, login: false});
+            }
           }else{
             res.render('productsUser', { tipos: tipos.data, produtos: produtos.data, selectedTypes: tipos.data, perfil: {}, login: true});
           }
@@ -187,13 +192,14 @@ router.post('/login', function(req, res){
   axios.post('http://localhost:7013/users/login', req.body)
     .then(response => {
       perfilUser = response.data.dados
-      res.cookie('perfilUser', response.data.dados, {expires: 3600})
+      res.cookie('perfilUser', response.data.dados, {expires:  new Date(Date.now() + 900000)})
       console.log("user")
       console.log(req.cookies.perfilUser)
-      res.cookie('token', response.data.token, {expires: 3600})
+      res.cookie('token', response.data.token, {expires:  new Date(Date.now() + 900000)})
       res.redirect('/')
     })
     .catch(e =>{
+      console.log(e)
       res.render('error', {error: e, message: "Credenciais inválidas"})
     })
 })
