@@ -95,8 +95,19 @@ router.put('/prod/checkout', function(req, res, next) {
   })
 });
 
-router.put('/prod/edit', function(req, res, next) {
-  Produto.updateProduto(req.body)
+router.put('/prod/checkout', function(req, res, next) {
+  Produto.updateProduto(req.body.id, req.body.quant)
+  .then(Produtos=>{
+    res.json(Produtos)
+  })
+  .catch(erro=>{
+    res.status(601).json({ message: "Erro a obter lista de Produtos",error:erro })
+  })
+});
+
+router.post('/wishlist', function(req, res, next) {
+  console.log(req.body)
+  Produto.filterID(req.body)
   .then(Produtos=>{
     res.json(Produtos)
   })
@@ -104,6 +115,7 @@ router.put('/prod/edit', function(req, res, next) {
     res.status(601).json({ message: "Erro ao fazer o update do produto",error:erro })
   })
 });
+
 
 router.get('/:id', function(req, res, next) {
   Produto.getID(req.params.id)

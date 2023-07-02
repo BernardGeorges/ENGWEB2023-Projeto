@@ -4,8 +4,9 @@ var axios = require('axios');
 const { response } = require('../../API/app');
 
 // Mailjet API credentials
-const API_KEY = 'd4efdb7a9439a4b8f018501b9bed1353';
-const API_SECRET = '0b9526b9077f3af615df09cbf34e4ed2';
+const API_KEY = '2b368fa7912cae50060ea2529fe0b0c1';
+const API_SECRET = '6f54f2a09bba25c3a4546cc38b4b61df';
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -112,6 +113,24 @@ router.post('/prod/filter', function(req, res, next) {
     });
 });
 
+router.get('/prod/wishlist', function(req, res, next) {
+  var data = new Date().toISOString().substring(0, 16);
+
+  axios.get("http://localhost:7012/tipos")
+    .then(tipos => {
+      axios.post("http://localhost:7012/wishlist", req.cookies.perfilUser.wishlist)
+        .then(produtos => {
+          res.render('wishlist.pug', { tipos: tipos.data, produtos: produtos.data, selectedTypes: tipos.data, perfil: req.cookies.perfilUser});
+        })
+        .catch(erro => {
+          res.render('error', { error: erro, message: "Erro a obter lista de produtos" });
+        });
+    })
+    .catch(erro => {
+      res.render('error', { error: erro, message: "Erro a obter lista de tipos" });
+    });
+});
+
 router.get('/prod/removeFavorite/:id', function(req, res, next) {
     req.cookies.perfilUser.wishlist.splice(req.cookies.perfilUser.wishlist.indexOf(req.params.id), 1);
     res.cookie('perfilUser',req.cookies.perfilUser)
@@ -200,7 +219,7 @@ router.get('/prod/addFavorite/:id', function(req, res, next) {
   }
 });
 
-router.post('/contacts', function(req, res, next) {
+router.post('/contacts/mail', function(req, res, next) {
   const { nome, e_mail, message } = req.body;
     try {
       // Create the email data
@@ -208,13 +227,13 @@ router.post('/contacts', function(req, res, next) {
         Messages: [
           {
             From: {
-              Email: 'miguelraposo000@gmail.com',
+              Email: 'projetoew2023@gmail.com',
               Name: nome 
             },
             To: [
               {
                 
-                Email: 'miguelraposo000@gmail.com',
+                Email: 'projetoew2023@gmail.com',
                 Name: nome,
               }
             ],
