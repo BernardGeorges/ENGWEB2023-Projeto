@@ -95,6 +95,18 @@ router.put('/prod/checkout', function(req, res, next) {
   })
 });
 
+router.post('/wishlist', function(req, res, next) {
+  console.log(req.body)
+  Produto.filterID(req.body)
+  .then(Produtos=>{
+    res.json(Produtos)
+  })
+  .catch(erro=>{
+    res.status(601).json({ message: "Erro a obter lista de Produtos",error:erro })
+  })
+});
+
+
 router.get('/:id', function(req, res, next) {
   Produto.getID(req.params.id)
     .then(Produto=>{

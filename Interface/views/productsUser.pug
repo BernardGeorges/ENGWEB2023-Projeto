@@ -94,7 +94,7 @@ block content
           a(href="/prod/precoalto?selectedTypes="+selectedTypes.join(',') class="w3-bar-item w3-button") Preço(mais altos)
         unless login
           .w3-margin-top 
-            a(href="/prod/precoalto?selectedTypes="+selectedTypes.join(',') class="w3-bar-item w3-button") Favoritos
+          a(href="/prod/wishlist" class="w3-bar-item w3-button") Favoritos
         p 
           b 
         form(action="/prod/filter" method="POST" style = "height: 100%")
