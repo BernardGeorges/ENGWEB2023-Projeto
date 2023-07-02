@@ -78,6 +78,32 @@ De seguida é necessário fazer npm i seguido de npm start na pasta API, auth-se
 
 # Interface
 
+## Sem Login
+![home](Imagens/SemLogin/home.png  "Home")
+![produtos](Imagens/SemLogin/produtos.png  "Produtos")
+![contactos](Imagens/SemLogin/contacts.png  "Contactos")
+
+## Login
+![login](Imagens/login.png  "Login")
+
+## Login como Admin
+![produtos](Imagens/admin/produtos.png  "Produtos")
+![editar](Imagens/admin/editar.png  "Editar")
+![adicionar](Imagens/admin/adicionar.png  "Adicionar")
+
+## Login como Cliente
+![produtos](Imagens/cliente/produtcs.png  "Produtos")
+![favoritos](Imagens/cliente/productsfavoritos.png  "Favoritos")
+![carrinho](Imagens/cliente/productscarrinho.png  "Carrinho")
+
+
+
+
+
+
+
+
+
 
 # Conclusão
 
