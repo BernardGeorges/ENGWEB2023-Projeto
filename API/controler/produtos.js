@@ -3,7 +3,7 @@ var Produto = require('../models/produtos')
 
 
 // Shop list
-module.exports.listAdmin = () => {
+module.exports.list = () => {
     return Produto.find().sort("preco")
         .then(resposta => {
             return resposta;
@@ -179,6 +179,24 @@ module.exports.addProduto = (id, prod) => {
             return erro
         })
 }
+
+module.exports.updateStockByIds = (ids, stockList) => {
+    const updates = ids.map((id, index) => {
+        const newStock = stockList[index];
+        return { _id: id, $inc: { stock: -newStock } };
+      });
+    
+      return Produto.updateMany({ $or: updates })
+        .then(() => {
+          console.log('Atualização concluída');
+          return true;
+        })
+        .catch((error) => {
+          console.error('Erro:', error);
+          return false;
+        });
+    };
+
 
 module.exports.deleteProduto = (id, prod) => {
     return Produto.updateOne({ "_id": id },

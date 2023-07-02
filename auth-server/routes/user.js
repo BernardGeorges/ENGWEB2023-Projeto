@@ -63,7 +63,7 @@ router.post('/register', function(req, res) {
                       jwt.sign({ username: req.user.username, 
                         sub: 'Projeto de EngWeb2023'}, 
                         "EWProjeto2023",
-                        {expiresIn: 3600},
+                        {expiresIn: 36000},
                         function(e, token) {
                           if(e) res.status(500).jsonp({error: "Erro na geração do token: " + e}) 
                           else User.getUserByName(req.user.username)
@@ -78,7 +78,7 @@ router.post('/register', function(req, res) {
 router.post('/login', passport.authenticate('local'), function(req, res){
   jwt.sign({ username: req.user.username, sub: 'Projeto de EngWeb2023'}, 
     "EWProjeto2023",
-    {expiresIn: 3600},
+    {expiresIn: 36000},
     function(e, token) {
       if(e) res.status(500).jsonp({error: "Erro na geração do token: " + e}) 
       else User.getUserByName(req.user.username)

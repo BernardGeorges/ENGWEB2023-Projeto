@@ -14,7 +14,7 @@ router.get('/precobaixo', function(req, res, next) {
 });
 
 router.get('/precoalto', function(req, res, next) {
-  Produto.filterUser(req.query.tipos.split(","))
+  Produto.filter(req.query.tipos.split(","))
   .then(Produtos => {
       const ProdutosOrdenados = Produtos.reverse();
       res.json(ProdutosOrdenados);
@@ -45,7 +45,7 @@ router.get('/produtos', function(req, res, next) {
       })
   }
   else{
-    Produto.listUser()
+    Produto.list()
     .then(Produtos=>{
       res.json(Produtos)
     })
@@ -76,9 +76,17 @@ router.get('/tipos', function(req, res, next) {
 });
 
 router.post('/prod/filter', function(req, res, next) {
+  Produto.filter(req.body.tipos)
+  .then(Produtos=>{
+    res.json(Produtos)
+  })
+  .catch(erro=>{
+    res.status(601).json({ message: "Erro a obter lista de Produtos",error:erro })
+  })
+});
 
-  console.log(req.body.tipos)
-  Produto.filterUser(req.body.tipos)
+router.put('/prod/checkout', function(req, res, next) {
+  Produto.updateStockByIds(req.body.id, req.body.quant)
   .then(Produtos=>{
     res.json(Produtos)
   })

@@ -120,12 +120,40 @@ router.get('/prod/removeFavorite/:id', function(req, res, next) {
     })
 });
 
+router.post('/checkout', function(req, res, next) {
+  console.log(req.body)
+  req.cookies.perfilUser.cart = []
+  axios.put('http://localhost:7013/users/prod/updateUser/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
+  .then(response => {
+    axios.put('http://localhost:7012/prod/checkout', req.body)
+      .then(response => {
+        res.redirect('/prod');
+      })
+      .catch(e =>{
+        res.render('error', {error: e, message: "Erro ao alterar a base de dados"})
+      })
+  })
+  .catch(e =>{
+    res.render('error', {error: e, message: "Erro ao alterar o usuario"})
+  })
+});
+
+router.get('/prod/removeCart/:id', function(req, res, next) {
+  req.cookies.perfilUser.cart.splice(req.cookies.perfilUser.cart.indexOf(req.params.id), 1);
+  res.cookie('perfilUser',req.cookies.perfilUser)
+  axios.put('http://localhost:7013/users/prod/updateUser/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
+  .then(response => {
+    res.redirect('/prod');
+  })
+  .catch(e =>{
+    res.render('error', {error: e, message: "Erro ao adicionar o produto aos favoritos"})
+  })
+});
+
 router.get('/prod/addCart/:id', function(req, res, next) {
   if(req.cookies && req.cookies.token && req.cookies.perfilUser){
-    console.log(req.cookies.perfilUser)
     req.cookies.perfilUser.cart.push(req.params.id)
     res.cookie('perfilUser',req.cookies.perfilUser)
-    console.log(req.cookies.perfilUser)
     axios.put('http://localhost:7013/users/prod/updateUser/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
     .then(response => {
       res.redirect('/prod');
@@ -207,10 +235,10 @@ router.post('/login', function(req, res){
 router.post('/register', function(req, res){
   axios.post('http://localhost:7013/users/register', req.body)
     .then(response => {
-      res.cookie('perfilUser', response.data.dados, {expires: 3600})
+      res.cookie('perfilUser', response.data.dados, {expires: 36000})
       console.log("user")
       console.log(req.cookies.perfilUser)
-      res.cookie('token', response.data.token, {expires: 3600})
+      res.cookie('token', response.data.token, {expires: 36000})
       res.redirect('/')
     })
     .catch(e =>{

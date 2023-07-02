@@ -1,33 +1,93 @@
 extends layout
 
 block content
-  - const head = {"display": "inline-block","margin-left": "5%"}
-  - const divs = {"display": "inline-block","margin-left": "2.5%"} 
-    //unless perfil.admin 
-    //  - var aux = []
-    //  each product in produtos
-    //    unless product.stock == 0
-    //      - aux.push(product)
-    //  - produtos = product
-  header.w3-light-grey.w3-card.w3-inter(style = "width : 100%; position: sticky; top: 0; z-index:9999")
-    a(href="/" )
-      img(src="/images/logo1.2.png" width="15%" height="auto" style = head)
-    h4.w3-inter(style=divs)
-        a.w3-text-deep-orange(href="/prod" style="text-decoration:none")  Produtos
-    h4.w3-inter(style=divs)
-        a(href="/contacts" style="text-decoration:none") Contactos
+  - var aux = []
+  - var car = []
+  - var max = 1
+  each product in produtos
+    - inCart = false
+    unless product.stock == 0
+      - aux.push(product)
+    if perfil.cart
+      - inCart = perfil.cart.includes(product._id)
+      if inCart 
+        - car.push(product)
+  script.
+    function myFunction() {
+    var x = document.getElementById("Demo");
+    if (x.className.indexOf("w3-show") == -1) { 
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+    }
+    function increaseCount(a, b) {
+        var input = b.previousElementSibling;
+        var prod = input.previousSibling;
+        var stock = parseInt(prod.value, 10);
+        var value = parseInt(input.value, 10); 
+        if (stock > value) {
+        value = isNaN(value)? 0 : value;
+        value ++;
+        input.value = value;
+        }
+      }
+      function decreaseCount(a, b) {
+        var stock = b.nextElementSibling;
+        var input = stock.nextElementSibling
+        var value = parseInt(input.value, 10); 
+        if (value > 1) {
+          value = isNaN(value)? 0 : value;
+          value --;
+          input.value = value;
+        }
+      }
+  header.w3-light-grey.w3-card.w3-inter(style = "display: flex; width : 100%; position: sticky; top: 0; z-index:9999")
+    div(style="display: flex; align-items: center;width:70%")
+      a(href="/" style="width:25%; margin-left: 5%")
+        img(src="/images/logo1.2.png" width="100%" height="auto")
+      h4.w3-inter(style="margin-left: 2.5%")
+          a.w3-text-deep-orange(href="/prod" style="text-decoration:none")  Produtos
+      h4.w3-inter(style="margin-left: 2.5%")
+          a(href="/contacts" style="text-decoration:none") Contactos
     if login
-      - const btn1 = {"display": "inline-block","margin-right": "5%", "margin-top": "2.4%"}
-      a(href="/login" class="w3-center-text w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style=btn1) Log in
+      div(style="display: flex; ; align-items: center; justify-content:right; width : 30%")
+        div(style="display: flex; ; align-items: center; width : 35%")
+          a(href="/login" class="w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style="width: 40%; margin-right: 5%; margin-top:2.5%") Log in
     else 
-      h4.w3-inter(style=divs)
-        a(href="/perfil" style="text-decoration:none") Perfil
-      - const btn1 = {"display": "inline-block","margin-right": "5%", "margin-top": "2.4%"}
-      a(href="/logout" class="w3-center-text w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style=btn1) Log out
+      div(style="display: flex; ; align-items: center; width : 30%")
+        .w3-row
+          .w3-half
+            .w3-dropdow-click(style= " margin-right: 5%; display: flex; ; align-items: center; justify-content: flex-end;")
+              button(onclick="myFunction()")
+                img(src="/images/shopping-cart.png" style="width:20%") 
+            .w3-dropdown-content(id="Demo" style="height: 90vh; overflow: auto;")
+              form(action="/checkout" method="POST" style = "height: 100%")
+                fieldset 
+                  ul.w3-ul         
+                    - var total = 0   
+                    each product in car
+                      li
+                        a(href="/prod/removeCart/"+product._id class="w3-bar-item w3-button w3-white w3-xlarge w3-right") ×
+                        .w3-center
+                          img(src=product.imagem, style="max-width: 50%; max-height: 50%; object-fit: contain;")
+                        input.w3-hide(type="text" name="id" value=product._id )
+                        p(style="font-weight:700; font-size: 125%;")  Marca: #{product.marca}
+                        p(style="font-weight:700; font-size: 125%;")  Preco: #{product.preco}
+                        .counter.w3-center
+                          span.down(class="down" onClick='decreaseCount(event, this)' style="font-weight:700; font-size: 125%; cursor:pointer;") -
+                          input.w3-hide(type="text" value= product.stock readonly)
+                          input.w3-margin.w3-center(name="quant" type="text" value="1" style="width:10%" readonly)
+                          span.up(class="up"  onClick='increaseCount(event, this)' style="font-weight:700; font-size: 125%; cursor:pointer;") +
+                      - total = total + product.preco
+                    li(style="font-weight:700; font-size: 125%;") Total = #{total}
+                  .w3-center
+                    input.w3-button.w3-deep-orange.w3-border.w3-border-deep-orange.w3-round-xxlarge.w3-hover-light-grey.w3-hover-text-deep-orange.w3-text-light-grey(type="submit" value="CHECK OUT" style = "width: 40%; font-weight:600")
+          .w3-half(style="height:100%; display: flex; ; align-items: center; justify-content: center;" )
+            a(href="/logout" class="w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style="height:100%; width:auto; margin-right: 5%; margin-top:2.5%") Log out
   .w3-row
     .w3-col(style="width: 15%")
-      .w3-container.w3-deep-orange 
-        - console.log(selectedTypes)
+      .w3-container.w3-deep-orange
         .w3-margin-top 
           a(href="/prod/precobaixo?selectedTypes="+selectedTypes.join(',') class="w3-bar-item w3-button") Preço (mais baixo)
         .w3-margin-top 
@@ -48,7 +108,7 @@ block content
     .w3-col(style="width: 75%")
       .w3-card
         .w3-row-padding
-          each product in produtos
+          each product in aux
             .w3-third.w3-padding
               .product-container(style="display: flex; justify-content: center; align-items: center; height: 200px;")
                 img(src=product.imagem, style="max-width: 100%; max-height: 100%; object-fit: contain;")
@@ -77,5 +137,5 @@ block content
                         a.w3-margin(href="/prod/addCart/"+product._id)
                           img(src="/images/add-to-cart.png" style="width:auto; height: 100%")         
     .w3-col(style="width: 12.5%")
-      p
+      p 
   include footer.pug

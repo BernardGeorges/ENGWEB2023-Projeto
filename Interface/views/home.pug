@@ -1,23 +1,26 @@
 extends layout
 
 block content
-  - const head = {"display": "inline-block","margin-left": "5%"}
-  - const divs = {"display": "inline-block","margin-left": "2.5%"}
-  header.w3-light-grey.w3-card.w3-inter(style = "width : 100%; position: sticky; top: 0; z-index:9999")
-    a.w3-text-deep-orange(href="/")
-      img(src="/images/logo1.2.png" width="15%" height="auto" style = head)
-    h4.w3-inter(style=divs)
-      a(href="/prod" style="text-decoration:none")  Products
-    h4.w3-inter(style=divs)
-      a(href="/contacts" style="text-decoration:none") Contacts
-    if login
-      - const btn1 = {"display": "inline-block","margin-right": "5%", "margin-top": "2.4%"}
-      a(href="/login" class="w3-center-text w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style=btn1) Log in
-    else 
-      h4.w3-inter(style=divs)
-        a(href="/perfil" style="text-decoration:none") Perfil
-      - const btn1 = {"display": "inline-block","margin-right": "5%", "margin-top": "2.4%"}
-      a(href="/logout" class="w3-center-text w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style=btn1) Log out
+  header.w3-light-grey.w3-card.w3-inter(style = "display: flex; width : 100%; position: sticky; top: 0; z-index:9999")
+   div(style="display: flex; align-items: center;width:70%")
+     a(href="/" style="width:25%; margin-left: 5%")
+       img(src="/images/logo1.2.png" width="100%" height="auto")
+     h4.w3-inter(style="margin-left: 2.5%")
+         a(href="/prod" style="text-decoration:none")  Produtos
+     h4.w3-inter(style="margin-left: 2.5%")
+         a(href="/contacts" style="text-decoration:none") Contactos
+   if login
+     - const btn1 = {"margin-right": "5%", "margin-top": "2.4%"}
+     div(style="display: flex; justify-content: flex-end; align-items: center;  width : 30%")
+       a(href="/login" class="w3-center-text w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style=" margin-right: 5%") Log in
+   else 
+     div(style="display: flex; ; align-items: center; width : 30%")
+       .w3-row
+         .w3-half
+           a(style= " margin-right: 5%; display: flex; ; align-items: center; justify-content: flex-end;")
+             img(src="/images/shopping-cart.png" style="width:20%") 
+         .w3-half(style="height:100%; display: flex; ; align-items: center; justify-content: center;" )
+           a(href="/logout" class="w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style="height:100%; width:auto; margin-right: 5%; margin-top:2.5%") Log out
   .w3-row.w3-inter
     .w3-col(style = "width:12.5%")
       p 

@@ -3,12 +3,6 @@ extends layout
 block content
   - const head = {"display": "inline-block","margin-left": "5%"}
   - const divs = {"display": "inline-block","margin-left": "2.5%"} 
-    //unless perfil.admin 
-    //  - var aux = []
-    //  each product in produtos
-    //    unless product.stock == 0
-    //      - aux.push(product)
-    //  - produtos = product
   header.w3-light-grey.w3-card.w3-inter(style = "width : 100%; position: sticky; top: 0; z-index:9999")
     a(href="/" )
       img(src="/images/logo1.2.png" width="15%" height="auto" style = head)
@@ -20,8 +14,6 @@ block content
       - const btn1 = {"display": "inline-block","margin-right": "5%", "margin-top": "2.4%"}
       a(href="/login" class="w3-center-text w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style=btn1) Log in
     else 
-      h4.w3-inter(style=divs)
-        a(href="/perfil" style="text-decoration:none") Perfil
       - const btn1 = {"display": "inline-block","margin-right": "5%", "margin-top": "2.4%"}
       a(href="/logout" class="w3-center-text w3-button w3-deep-orange w3-border  w3-border-deep-orange w3-round-xxlarge w3-right w3-hover-light-grey w3-hover-text-deep-orange w3-text-light-grey" style=btn1) Log out
   .w3-row
