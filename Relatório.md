@@ -51,19 +51,20 @@ O objetivo final deste trabalho é fornecer uma plataforma que atenda às necess
 
 Neste capítulo, irá ser abordado a estruturação e o desenvolvimento do projeto em termos de codificação. O projeto foi organizado em três subaplicações essenciais:
 
-1. Autenticação: Nesta etapa, foi implementado um sistema de autenticação para garantir a segurança da plataforma. A autenticação é necessária para assegurar que os usuários tenham acesso apenas às ações específicas permitidas, de acordo com seus níveis de acesso.
+1. Autenticação: Nesta etapa, foi implementado um sistema de autenticação para garantir a segurança da plataforma. A autenticação é necessária para assegurar que os utilizadores tenham acesso apenas às ações específicas permitidas, de acordo com seus níveis de acesso. 
 
-2. API de Dados: A API de Dados foi desenvolvida para lidar com o armazenamento e gerenciamento dos dados da plataforma. Foi utilizado uma base de dados, através do software MongoDB, para armazenar informações dos produtos e users. A API fornece endpoints para a criação, leitura, atualização e exclusão de dados, permitindo que a plataforma interaja com a base de dados de forma segura e eficiente.
+2. API de Dados: Foi utilizado uma base de dados, através do software MongoDB, para armazenar informações dos produtos e users. Esta permite a criação, leitura, atualização e exclusão de dados, proporcionando uma iteração entre a plataforma e a base de dados de forma segura e eficiente.
    
-4.  Interface: Foi projetada uma interface amigável e intuitiva, com layouts e componentes adequados para facilitar a interação dos utilizadores com a plataforma. Foram utilizadas tecnologias web, como Pug, CSS e JavaScript. A interface permite que os utilizadores possam interagir com a plataforma, podendo realizar o login e o registo.
+4.  Interface: A interface permite que os utilizadores possam interagir com a plataforma de uma forma mais simples e intuitiva. Para a sua realização foram utilizadas tecnologias web, como Pug, CSS e JavaScript.
 
-Cada uma dessas partes desempenha um papel fundamental no funcionamento da plataforma, trabalhando em conjunto para a nossa plataforma poder funcionar na totalidade. A estruturação em três partes distintas permite que o projeto seja dividido em módulos independentes, facilitando o desenvolvimento, manutenção e escalabilidade da plataforma.
+O desempenho correto e total da plataforma só é conseguido através do trabalho conjunto de cada uma das partes referidas em cima.
+Esta estururação permite que o projeto seja dividido em módulos independentes, facilitando o desenvolvimento, manutenção e escalabilidade da plataforma.
 
 
 # Dataset produtos
 
 Na criação do dataset dos produtos foi usado o site https://datagen.di.uminho.pt/.
-Inicialmente, surgiram algumas dificuldades devido ao facto de que para cada tipo de produto (Frigorífico, Máquina de Lavar Roupa, Micro-ondas, Televisão e Aspirador) era desejado obter diferentes informações, como imagens, marcas, modelos e preços. No entanto, consegui-se ultrapassar essas dificuldades e chegou-se ao seguinte:
+Inicialmente, surgiram algumas dificuldades devido ao facto de que para cada tipo de produto (Frigorífico, Máquina de Lavar Roupa, Micro-ondas, Televisão e Aspirador) era desejado obter diferentes informações, como imagens, marcas, modelos e preços. No entanto, consegui-se ultrapassar essas dificuldades e chegou-se à seguinte script:
 
 ![produtos](Imagens/produtos.png  "Dataset produtos")
 
@@ -82,7 +83,7 @@ De seguida é necessário fazer npm i seguido de npm start na pasta API, auth-se
 
 Em conclusão, o grupo está satisfeito com os conhecimentos adquiridos e os resultados alcançados neste projeto, apesar dos desafios enfrentados ao longo do caminho.
 
-Embora se tenha cumprido os objetivos principais deste trabalho, há que reconhecer que ainda há muito espaço para melhorias e expansões futuras. Por exemplo, a implementação de recursos adicionais, como o envio de ficheiros por email, melhoramento do processo de compra no carrinho, confirmação de conta por email para novos utilizadores, remoção e adição de novos produtos por parte do administrador.
+Embora se tenha cumprido os objetivos principais deste trabalho, há que reconhecer que ainda há muito espaço para melhorias e expansões futuras. Por exemplo, a implementação de recursos adicionais, como o envio de ficheiros por email, melhoramento do processo de compra no carrinho, confirmação de conta por email para novos utilizadores, remoção e adição de novos produtos por parte do administrador, etc...
 
 Contudo, o grupo considera que, com alguns ajustes, a plataforma desenvolvida poderá ter um impacto positivo na empresa de eletrodomésticos, proporcionando aos utilizadores uma experiência agradável e satisfatória. 
 
