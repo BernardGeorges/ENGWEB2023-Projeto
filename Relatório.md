@@ -69,7 +69,7 @@ Cada uma dessas partes desempenha um papel fundamental no funcionamento da plata
 Usando o site https://datagen.di.uminho.pt/ foi criado o dataset referente aos produtos de modo a dependendo do tipo de produto as informações do mesmo eram difentes
 
 ### Dataset Utilizadores
-![users](imagens/produtos.png  "Dataset produtos")
+![produtos](imagens/produtos.png  "Dataset produtos")
 
 # Modo de funcionamento
 
