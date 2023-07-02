@@ -234,13 +234,12 @@ router.get('/prod/addCart/:id', function(req, res, next) {
 
 router.get('/prod/addFavorite/:id', function(req, res, next) {
   if(req.cookies && req.cookies.token && req.cookies.perfilUser){
-    console.log(req.cookies.perfilUser)
     req.cookies.perfilUser.wishlist.push(req.params.id)
     res.cookie('perfilUser',req.cookies.perfilUser)
-    console.log(req.cookies.perfilUser)
     axios.put('http://localhost:7013/users/prod/updateUser/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
     .then(response => {
       const previousPage = req.headers.referer || '/'; 
+      console.log(previousPage)
       res.redirect(previousPage);
     })
     .catch(e =>{
