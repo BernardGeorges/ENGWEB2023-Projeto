@@ -95,6 +95,16 @@ router.put('/prod/checkout', function(req, res, next) {
   })
 });
 
+router.put('/prod/edit', function(req, res, next) {
+  Produto.updateProduto(req.body)
+  .then(Produtos=>{
+    res.json(Produtos)
+  })
+  .catch(erro=>{
+    res.status(601).json({ message: "Erro ao fazer o update do produto",error:erro })
+  })
+});
+
 router.get('/:id', function(req, res, next) {
   Produto.getID(req.params.id)
     .then(Produto=>{

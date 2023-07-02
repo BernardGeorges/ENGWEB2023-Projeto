@@ -7,7 +7,8 @@ var produtoSchema = new mongoose.Schema({
         tipo: String,
         modelo: String,
         preco: Number,
-        marca: String
+        marca: String,
+        stock: Number
 });
 
 

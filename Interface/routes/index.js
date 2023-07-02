@@ -124,9 +124,21 @@ router.get('/prod/removeFavorite/:id', function(req, res, next) {
     })
 });
 
+router.post('/edit/:id', function(req, res, next) {
+  console.log(req.body)
+  axios.put('http://localhost:7012/prod/edit/'+req.params.id, req.body)
+      .then(response => {
+        res.redirect('/prod');
+      })
+      .catch(e =>{
+        res.render('error', {error: e, message: "Erro ao alterar a base de dados"})
+      })
+});
+
 router.post('/checkout', function(req, res, next) {
   console.log(req.body)
   req.cookies.perfilUser.cart = []
+  res.cookie('perfilUser',req.cookies.perfilUser)
   axios.put('http://localhost:7013/users/prod/updateUser/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
   .then(response => {
     axios.put('http://localhost:7012/prod/checkout', req.body)

@@ -119,8 +119,8 @@ module.exports.addProduto = l => {
         })
 }
 
-module.exports.updateProduto = l => {
-    return Produto.updateOne({ _id: l._id }, l)
+module.exports.updateProduto = (id,l) => {
+    return Produto.updateOne({ _id: id }, l)
         .then(resposta => {
             return resposta
         })
@@ -161,6 +161,17 @@ module.exports.categorias = () => {
 
 module.exports.prodsByCateg = (id) => {
     return Produto.aggregate([{ $unwind: "$produtos" }, { $match: { "produtos.categoria": id } }, { $project: { "produtos.designacao": 1, _id: 0 } }])
+        .then(resposta => {
+            return resposta
+        })
+        .catch(erro => {
+            return erro
+        })
+}
+
+module.exports.addProduto = (id, prod) => {
+    return Produto.updateOne({ _id: id },
+        { $push: { "produtos": prod } })
         .then(resposta => {
             return resposta
         })
