@@ -29,15 +29,15 @@ O objetivo final deste trabalho é fornecer uma plataforma que atenda às necess
 - [x] Caso um utilizador desejar adicionar um produto à sua lista de favoritos ou comprar um produto deverá realizar autenticação: username+password;
 - [x] Deverá ser possível criar uma nova conta, através do registo, onde será preciso fornecer um username, um nome e uma password para criar a conta.
 - [x] Deverão existir pelo menos 2 níveis de acesso:
-	- Administrador - pode alterar o stock dos produtos;
+	- Administrador - pode alterar as informações dos produtos;
 	- Cliente - pode adicionar produtos à sua lista de favoritos, filtrar e comprar produtos;
 - [x] O Cliente deverá conseguir vizualizar apenas os produtos com stock superior a 0.
 - [x] O cliente deve conseguir filtrar os produtos por preço ascendente/descente e pelo tipo do produto (Frigorífico, Micro-ondas, Aspirador, Máquina de lavar a roupa e Televisão);
 - [x] O cliente deverá conseguir vizualizar os produtos adicionados aos Favoritos e ao Carrinho;
 - [x] O cliente deverá conseguir remover produtos dos Favoritos e do Carrinho;
-- [ ] O cliente deverá conseguir comprar os produtos do Carrinho, diminuindo o stock dos mesmos e ficando o Carrinho vazio.
+- [x] O cliente deverá conseguir comprar os produtos do Carrinho, diminuindo o stock dos mesmos e ficando o Carrinho vazio.
 - [ ] O Administrador deverá conseguir adicionar e remover um produto;
-- [x] O Administrador deverá conseguir vizualizar todos os produtos e alterar o seu stock;
+- [x] O Administrador deverá conseguir vizualizar todos os produtos, incluindo os que têm stock a 0 e altera-los;
 - [x] O website deverá ter uma barra de navegação para o utilizador poder navegar facilmente entre as diferentes páginas
 - [x] O website deverá ter um footer com algumas informações de contacto com a empresa.
 - [x] O website deverá ter uma página Produtos diferente para cada tipo de utilizador.
