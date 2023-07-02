@@ -1,17 +1,12 @@
+# Índice
+
 - [Índice](#índice)
 - [Introdução](#introdução)
-- [Um belo Projeto](#um-belo-projeto)
-- [Análise e Especificação](#análise-e-especificação)
-- [Descrição informal do problema](#descrição-informal-do-problema)
 - [Levantamento de Requisitos](#levantamento-de-requisitos)
-- [Requisitos Mínimos](#requisitos-mínimos)
-- [Requisitos Extra](#requisitos-extra)
 - [Estrutura/Desenvolvimento](#estruturadesenvolvimento)
-	- [Autenticação](#autenticação)
-	- [API de Dados](#api-de-dados)
-		- [meals.js:](#mealsjs)
-		- [reserves.js:](#reservesjs)
-		- [users.js:](#usersjs)
+- [Dataset Produtos](#dataset-produtos)
+- [Interface](#interface)
+
 
 # Introdução
 
@@ -53,26 +48,30 @@ O objetivo final deste trabalho é fornecer uma plataforma que atenda às necess
 
 # Estrutura/Desenvolvimento
 
-Neste Capítulo iremos falar de como o projeto foi estruturado e mostrar o seu desenvolvimento em termos de codificação. Este projeto foi estruturado entre três sub-aplicações:
+Neste capítulo, irá ser abordado a estruturação e o desenvolvimento do projeto em termos de codificação. O projeto foi organizado em três subaplicações essenciais:
 
-1. Autenticação: Nessa parte, foi implementado um sistema de autenticação para garantir a segurança da plataforma. A autenticação é necessária para garantir que apenas utilizadores autorizados possam acessar a plataforma e realizar ações específicas, de acordo com os seus níveis de acesso. Para gerir os utilizadores e as respetivas sessões são utilizados os módulos *passport-local* e *jsonwebtoken*. O módulo *jsonwebtoken* é apenas utilizado para a geração de um token que irá identificar a sessão do utilizador. Este token será utilizado pela interface como uma cookie.
+1. Autenticação: Nesta etapa, foi implementado um sistema de autenticação para garantir a segurança da plataforma. A autenticação é necessária para assegurar que os usuários tenham acesso apenas às ações específicas permitidas, de acordo com seus níveis de acesso.
 
-2. API de Dados: A API de Dados foi desenvolvida para lidar com o armazenamento e gerenciamento dos dados da plataforma. Foi utilizado uma base de dados, através do software MongoDB, para armazenar informações dos utilizadores, refeições e reservas. A API fornece endpoints para a criação, leitura, atualização e exclusão de dados, permitindo que a plataforma interaja com a base de dados de forma segura e eficiente.
-3. 
-4. Interface: Foi projetada uma interface amigável e intuitiva, com layouts e componentes adequados para facilitar a interação dos utilizadores com a plataforma. Foram utilizadas tecnologias web, como Pug, CSS e JavaScript. A interface permite que os utilizadores possam interagir com a plataforma, podendo realizar o login e o registo, visualizar a ementa da cantina, comprar senhas, reservar refeições e ver o seu perfil, e os que forem administradores, criar novos utilizadores e refeições.
+2. API de Dados: A API de Dados foi desenvolvida para lidar com o armazenamento e gerenciamento dos dados da plataforma. Foi utilizado uma base de dados, através do software MongoDB, para armazenar informações dos produtos e users. A API fornece endpoints para a criação, leitura, atualização e exclusão de dados, permitindo que a plataforma interaja com a base de dados de forma segura e eficiente.
+   
+4.  Interface: Foi projetada uma interface amigável e intuitiva, com layouts e componentes adequados para facilitar a interação dos utilizadores com a plataforma. Foram utilizadas tecnologias web, como Pug, CSS e JavaScript. A interface permite que os utilizadores possam interagir com a plataforma, podendo realizar o login e o registo.
 
 Cada uma dessas partes desempenha um papel fundamental no funcionamento da plataforma, trabalhando em conjunto para a nossa plataforma poder funcionar na totalidade. A estruturação em três partes distintas permite que o projeto seja dividido em módulos independentes, facilitando o desenvolvimento, manutenção e escalabilidade da plataforma.
 
 
-# Datasets
+# Dataset produtos
 
-Usando o site https://datagen.di.uminho.pt/ foi criado o dataset referente aos produtos de modo a dependendo do tipo de produto as informações do mesmo eram difentes
+Na criação do dataset dos produtos foi usado o site https://datagen.di.uminho.pt/.
+Inicialmente, surgiram algumas dificuldades devido ao facto de que para cada tipo de produto (Frigorífico, Máquina de Lavar Roupa, Micro-ondas, Televisão e Aspirador) era desejado obter diferentes informações, como imagens, marcas, modelos e preços. No entanto, consegui-se ultrapassar essas dificuldades e chegou-se ao seguinte:
 
-### Dataset Utilizadores
 ![produtos](Imagens/produtos.png  "Dataset produtos")
+
+Através desta script foi possível gerar um dataset com 50 produtos de eletrodomésticos, onde cada produto possui um ID, informações sobre o stock, tipo de eletrodoméstico, modelo, preço, marca e uma imagem correspondente.
 
 # Modo de funcionamento
 
-O nosso projeto está preparado para correr no docker, sendo composto por 4 containers distintos. Apenas o container da interface, chamado AppCantina está exposto para o exterior (porta 7777) de  forma a proteger a aplicação. Assim, para correr a  nossa aplicação é apenas necessárrio correr o comando:  `docker-compose up -d --build`.
-Além disso, é necessário ter algumas veriáveis de ambiente definidas num ficheiro `.env`. Estas variáveis servem para utilizar a API MailJet e correspondem à API KEY e à API SECRET, que são as chaves que permitem identificar a conta de quem está a usar a API. Por razões de segurança estes dados não são expostos.
+Inicialmente é necessário importar a base de dados usando o dataset criado. Para isso basta fazer mongoimport -d ProjetoEW -c produros --file dataset.json --jsonArray.
+De seguida é necessário fazer npm i seguido de npm start na pasta API, auth-server e Interface e o programa está prontos a correr!
 
+
+# Interface
