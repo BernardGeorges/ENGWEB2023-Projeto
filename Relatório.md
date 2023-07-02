@@ -6,6 +6,7 @@
 - [Estrutura/Desenvolvimento](#estruturadesenvolvimento)
 - [Dataset Produtos](#dataset-produtos)
 - [Interface](#interface)
+- [Conclusão](#conclusão)
 
 
 # Introdução
@@ -75,3 +76,13 @@ De seguida é necessário fazer npm i seguido de npm start na pasta API, auth-se
 
 
 # Interface
+
+
+# Conclusão
+
+Em conclusão, o grupo está satisfeito com os conhecimentos adquiridos e os resultados alcançados neste projeto, apesar dos desafios enfrentados ao longo do caminho.
+
+Embora se tenha cumprido os objetivos principais deste trabalho, há que reconhecer que ainda há muito espaço para melhorias e expansões futuras. Por exemplo, a implementação de recursos adicionais, como o envio de ficheiros por email, melhoramento do processo de compra no carrinho, confirmação de conta por email para novos utilizadores, remoção e adição de novos produtos por parte do administrador.
+
+Contudo, o grupo considera que, com alguns ajustes, a plataforma desenvolvida poderá ter um impacto positivo na empresa de eletrodomésticos, proporcionando aos utilizadores uma experiência agradável e satisfatória. 
+
