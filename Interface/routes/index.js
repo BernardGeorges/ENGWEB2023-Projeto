@@ -1,7 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var axios = require('axios');
+const { v4: uuidv4 } = require('uuid');
 const { response } = require('../../API/app');
+
+var prevPage = null
 
 // Mailjet API credentials
 const API_KEY = '2b368fa7912cae50060ea2529fe0b0c1';
@@ -10,6 +13,7 @@ const API_SECRET = '6f54f2a09bba25c3a4546cc38b4b61df';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  prevPage = '/'
   var signedin = true
   if(req.cookies != null && req.cookies.token){
     signedin = false
@@ -18,6 +22,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/perfil', function(req, res, next) {  
+  prevPage = '/perfil'
   axios.get("http://localhost:7013/users/admin?token="+req.cookies.token)
     .then(tipos => {
       console.log(tipos.data.dados.admin)
@@ -33,6 +38,7 @@ router.get('/perfil', function(req, res, next) {
 });
 
 router.get('/prod', function(req, res, next) {
+  prevPage = '/prod'
   var data = new Date().toISOString().substring(0, 16);
   axios.get("http://localhost:7012/tipos")
     .then(tipos => {
@@ -59,6 +65,7 @@ router.get('/prod', function(req, res, next) {
 
 
 router.get('/prod/precobaixo', function(req, res, next) {
+  prevPage = '/prod/precobaixo'
   var data = new Date().toISOString().substring(0, 16);
   axios.get("http://localhost:7012/tipos")
     .then(tipos => {
@@ -76,6 +83,7 @@ router.get('/prod/precobaixo', function(req, res, next) {
 });
 
 router.get('/prod/precoalto', function(req, res, next) {
+  prevPage = '/prod/precoalto'
   var data = new Date().toISOString().substring(0, 16);
 
   axios.get("http://localhost:7012/tipos")
@@ -94,6 +102,7 @@ router.get('/prod/precoalto', function(req, res, next) {
 });
 
 router.post('/prod/filter', function(req, res, next) {
+  prevPage = '/prod/filter'
   const selectedTypes = Object.keys(req.body);
   const apiUrl = 'http://localhost:7012/prod/filter';
 
@@ -114,6 +123,7 @@ router.post('/prod/filter', function(req, res, next) {
 });
 
 router.get('/prod/wishlist', function(req, res, next) {
+  prevPage = '/prod/wishlist'
   var data = new Date().toISOString().substring(0, 16);
 
   axios.get("http://localhost:7012/tipos")
@@ -136,7 +146,7 @@ router.get('/prod/removeFavorite/:id', function(req, res, next) {
     res.cookie('perfilUser',req.cookies.perfilUser)
     axios.put('http://localhost:7013/users/prod/updateUser/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
     .then(response => {
-      res.redirect('/prod');
+      res.redirect(prevPage);
     })
     .catch(e =>{
       res.render('error', {error: e, message: "Erro ao adicionar o produto aos favoritos"})
@@ -147,7 +157,29 @@ router.post('/edit/:id', function(req, res, next) {
   console.log(req.body)
   axios.put('http://localhost:7012/prod/edit/'+req.params.id, req.body)
       .then(response => {
-        res.redirect('/prod');
+        res.redirect(prevPage);
+      })
+      .catch(e =>{
+        res.render('error', {error: e, message: "Erro ao alterar a base de dados"})
+      })
+});
+
+router.post('/create', function(req, res, next) {
+  req.body._id = uuidv4()
+  console.log(req.body)
+  axios.post('http://localhost:7012/prod/create', req.body)
+      .then(response => {
+        res.redirect(prevPage);
+      })
+      .catch(e =>{
+        res.render('error', {error: e, message: "Erro ao alterar a base de dados"})
+      })
+});
+
+router.get('/prod/remove/:id', function(req, res, next) {
+  axios.delete('http://localhost:7012/'+req.params.id)
+      .then(response => {
+        res.redirect(prevPage);
       })
       .catch(e =>{
         res.render('error', {error: e, message: "Erro ao alterar a base de dados"})
@@ -162,7 +194,7 @@ router.post('/checkout', function(req, res, next) {
   .then(response => {
     axios.put('http://localhost:7012/prod/checkout', req.body)
       .then(response => {
-        res.redirect('/prod');
+        res.redirect(prevPage);
       })
       .catch(e =>{
         res.render('error', {error: e, message: "Erro ao alterar a base de dados"})
@@ -178,7 +210,7 @@ router.get('/prod/removeCart/:id', function(req, res, next) {
   res.cookie('perfilUser',req.cookies.perfilUser)
   axios.put('http://localhost:7013/users/prod/updateUser/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
   .then(response => {
-    res.redirect('/prod');
+    res.redirect(prevPage);
   })
   .catch(e =>{
     res.render('error', {error: e, message: "Erro ao adicionar o produto aos favoritos"})
@@ -191,7 +223,7 @@ router.get('/prod/addCart/:id', function(req, res, next) {
     res.cookie('perfilUser',req.cookies.perfilUser)
     axios.put('http://localhost:7013/users/prod/updateUser/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
     .then(response => {
-      res.redirect('/prod');
+      res.redirect(prevPage);
     })
     .catch(e =>{
       res.render('error', {error: e, message: "Erro ao adicionar o produto ao carrinho"})
@@ -209,7 +241,7 @@ router.get('/prod/addFavorite/:id', function(req, res, next) {
     console.log(req.cookies.perfilUser)
     axios.put('http://localhost:7013/users/prod/updateUser/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
     .then(response => {
-      res.redirect('/prod');
+      res.redirect(prevPage);
     })
     .catch(e =>{
       res.render('error', {error: e, message: "Erro ao adicionar o produto aos favoritos"})
@@ -271,9 +303,6 @@ router.get('/contacts', function(req, res, next) {
   res.render('contacts', {login: signedin});
 });
 
-router.get('/prod', function(req, res, next) {
-  res.render('productsUser', {});
-});
 
 router.get('/register', function(req, res, next) {
   res.render('register', {});
@@ -303,7 +332,7 @@ router.post('/login', function(req, res){
       console.log("user")
       console.log(req.cookies.perfilUser)
       res.cookie('token', response.data.token, {expires:  new Date(Date.now() + 900000)})
-      res.redirect('/')
+      res.redirect(prevPage)
     })
     .catch(e =>{
       console.log(e)

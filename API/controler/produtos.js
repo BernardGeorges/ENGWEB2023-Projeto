@@ -131,6 +131,7 @@ module.exports.updateProduto = (id,l) => {
 
 
 module.exports.deleteProduto = id => {
+    console.log(id)
     return Produto.deleteOne({ _id: id })
         .then(resposta => {
             return resposta
@@ -160,27 +161,6 @@ module.exports.prodsByCateg = (id) => {
         })
 }
 
-module.exports.addProduto = (id, prod) => {
-    return Produto.updateOne({ _id: id },
-        { $push: { "produtos": prod } })
-        .then(resposta => {
-            return resposta
-        })
-        .catch(erro => {
-            return erro
-        })
-}
-
-module.exports.addProduto = (id, prod) => {
-    return Produto.updateOne({ _id: id },
-        { $push: { "produtos": prod } })
-        .then(resposta => {
-            return resposta
-        })
-        .catch(erro => {
-            return erro
-        })
-}
 
 module.exports.updateStockByIds = (ids, stockList) => {
     const updates = ids.map((id, index) => {
@@ -215,13 +195,3 @@ module.exports.updateStockByIds = (ids, stockList) => {
   };
 
 
-module.exports.deleteProduto = (id, prod) => {
-    return Produto.updateOne({ "_id": id },
-        { $pull: { "produtos": { _id: prod } } })
-        .then(resposta => {
-            return resposta
-        })
-        .catch(erro => {
-            return erro
-        })
-}

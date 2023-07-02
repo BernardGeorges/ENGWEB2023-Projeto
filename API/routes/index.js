@@ -85,6 +85,16 @@ router.post('/prod/filter', function(req, res, next) {
   })
 });
 
+router.post('/prod/create', function(req, res, next) {
+  Produto.addProduto(req.body)
+  .then(Produtos=>{
+    res.json(Produtos)
+  })
+  .catch(erro=>{
+    res.status(601).json({ message: "Erro a obter lista de Produtos",error:erro })
+  })
+});
+
 router.put('/prod/checkout', function(req, res, next) {
   Produto.updateStockByIds(req.body.id, req.body.quant)
   .then(Produtos=>{
@@ -95,8 +105,20 @@ router.put('/prod/checkout', function(req, res, next) {
   })
 });
 
-router.put('/prod/checkout', function(req, res, next) {
-  Produto.updateProduto(req.body.id, req.body.quant)
+router.delete('/:id', function(req, res, next) {
+  Produto.deleteProduto(req.params.id)
+  .then(Produtos=>{
+    console.log(Produtos)
+    res.json(Produtos)
+  })
+  .catch(erro=>{
+    console.log(erro)
+    res.status(601).json({ message: "Erro a obter lista de Produtos",error:erro })
+  })
+});
+
+router.put('/prod/edit/:id', function(req, res, next) {
+  Produto.updateProduto(req.params.id, req.body)
   .then(Produtos=>{
     res.json(Produtos)
   })
