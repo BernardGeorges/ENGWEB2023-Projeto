@@ -11,15 +11,15 @@
 
 # Introdução
 
-O presente relatório descreve o trabalho prático realizado no âmbito da Unidade Curricular de Engenharia Web, inserida no curso de Licenciatura em Engenharia Informática durante o 2º Semestre do ano letivo 2022/2023.
-Neste projeto, o grupo optou por escolher o seu próprio tema, que consiste na criação de uma plataforma de suporte a uma empresa de eletrodomésticos.
+O presente relatório descreve o trabalho prático realizado no âmbito da Unidade Curricular de Engenharia Web, inserida no curso de Licenciatura em Engenharia Informática durante o 2º Semestre do 3º ano no letivo 2022/2023.
+Neste projeto, o grupo optou por escolher o seu próprio tema, que consiste na criação de uma plataforma de suporte a uma empresa de serviços e venda de eletrodomésticos.
 O objetivo deste trabalho é desenvolver uma plataforma com dois tipos distintos de utilizadores: os clientes e os administradores.
 Os clientes podem visualizar informações acerca da empresa, ver e comprar produtos, e enviar e-mails.
-Os administradores têm acesso a funcionalidades adicionais, como a gestão do estoque de produtos.
+Os administradores têm acesso a funcionalidades adicionais, como a gestão, adição e remoção de produtos.
 
 O relatório está dividido em várias seções. Iniciamos com a introdução, que apresenta uma visão geral do trabalho realizado. Em seguida, abordamos a análise e especificação, onde descrevemos informalmente o problema a ser resolvido e estabelecemos os requisitos necessários para a sua resolução. Posteriormente, apresentamos a conceção/desenho da solução, detalhando as estratégias adotadas para o desenvolvimento da plataforma. Prosseguimos com a seção de codificação e testes, onde descrevemos o processo de implementação e os testes realizados para verificar a correta funcionalidade da plataforma. Por fim, concluímos o relatório com uma síntese das principais conclusões obtidas ao longo do projeto.
 
-O objetivo final deste trabalho é fornecer uma plataforma que atenda às necessidades da empresa de eletrodomésticos, permitindo aos clientes interagir com a empresa de forma eficiente e aos administradores gerir o estoque de produtos de forma adequada.
+O objetivo final deste trabalho é fornecer uma plataforma que atenda às necessidades da empresa de eletrodomésticos, permitindo aos clientes interagir com a empresa de forma eficiente e aos administradores gerir os produtos de forma adequada.
 
 # Levantamento de Requisitos
 
@@ -36,7 +36,7 @@ O objetivo final deste trabalho é fornecer uma plataforma que atenda às necess
 - [x] O cliente deverá conseguir vizualizar os produtos adicionados aos Favoritos e ao Carrinho;
 - [x] O cliente deverá conseguir remover produtos dos Favoritos e do Carrinho;
 - [x] O cliente deverá conseguir comprar os produtos do Carrinho, diminuindo o stock dos mesmos e ficando o Carrinho vazio.
-- [ ] O Administrador deverá conseguir adicionar e remover um produto;
+- [x] O Administrador deverá conseguir adicionar e remover um produto;
 - [x] O Administrador deverá conseguir vizualizar todos os produtos, incluindo os que têm stock a 0 e altera-los;
 - [x] O website deverá ter uma barra de navegação para o utilizador poder navegar facilmente entre as diferentes páginas
 - [x] O website deverá ter um footer com algumas informações de contacto com a empresa.
@@ -51,9 +51,9 @@ O objetivo final deste trabalho é fornecer uma plataforma que atenda às necess
 
 Neste capítulo, irá ser abordado a estruturação e o desenvolvimento do projeto em termos de codificação. O projeto foi organizado em três subaplicações essenciais:
 
-1. Autenticação: Nesta etapa, foi implementado um sistema de autenticação para garantir a segurança da plataforma. A autenticação é necessária para assegurar que os utilizadores tenham acesso apenas às ações específicas permitidas, de acordo com seus níveis de acesso. 
+1. Autenticação: Foi implementado um sistema de autenticação para garantir a segurança da plataforma. A autenticação é necessária para assegurar a existencia de zonas de uso proprio, como por exemplo carrinho e wishlist. Isto permite também que os utilizadores tenham acesso apenas a seus dados e as ações específicas de alteração destas informações. 
 
-2. API de Dados: Foi utilizado uma base de dados, através do software MongoDB, para armazenar informações dos produtos e users. Esta permite a criação, leitura, atualização e exclusão de dados, proporcionando uma iteração entre a plataforma e a base de dados de forma segura e eficiente.
+2. API de Dados: Foi utilizado uma base de dados, através do software MongoDB, para armazenar informações dos produtos. Esta permite a criação, leitura, atualização e exclusão de dados, proporcionando uma iteração entre a plataforma e a base de dados de forma segura e eficiente.
    
 4.  Interface: A interface permite que os utilizadores possam interagir com a plataforma de uma forma mais simples e intuitiva. Para a sua realização foram utilizadas tecnologias web, como Pug, CSS e JavaScript.
 
@@ -73,7 +73,7 @@ Através desta script foi possível gerar um dataset com 50 produtos de eletrodo
 # Modo de funcionamento
 
 Inicialmente é necessário importar a base de dados usando o dataset criado. Para isso basta fazer mongoimport -d ProjetoEW -c produros --file dataset.json --jsonArray.
-De seguida é necessário fazer npm i seguido de npm start na pasta API, auth-server e Interface e o programa está prontos a correr!
+De seguida é necessário fazer npm i seguido de npm start na pasta API, auth-server e Interface, sendo que cada pasta deve correr em seu terminal proprio e o programa está pronto a correr!
 
 
 # Interface

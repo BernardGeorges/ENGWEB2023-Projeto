@@ -75,13 +75,13 @@ block content
                       a.w3-margin(onclick="myFunction(\"Demo"+ product._id +"\")") editar
                     .w3-half(style="height: 100%")
                       a.w3-margin(href="/prod/remove/"+product._id style="text-decoration:none") remover
-              .w3-dropdown-content(id="Demo"+ product._id style="overflow: auto; width: 15%;")
+              .w3-dropdown-content(id="Demo"+ product._id style="width: 15%;")
                 form(action="/edit/"+product._id method="POST" style = "height: 100%; width: 100%")
                   fieldset
                     label Marca
                     input.w3-input(type="text" name="marca" value=product.marca)
                     label Preço
-                    input.w3-input(type="number" name="preco" value=product.preco)
+                    input.w3-input(type="text" name="preco" value=product.preco)
                     label Tipo
                     input.w3-input(type="text" name="tipo" value=product.tipo)
                     label Modelo
@@ -91,7 +91,7 @@ block content
                     label Stock
                     .counter.w3-center
                       span.down(class="down" onClick='decreaseCount(event, this)' style="font-weight:700; font-size: 125%; cursor:pointer;") -
-                      input.w3-margin.w3-center(name="stock" type="number" value=product.stock style="width:10%")
+                      input.w3-margin.w3-center(name="stock" type="text" value=product.stock style="width:12%")
                       span.up(class="up"  onClick='increaseCount(event, this)' style="font-weight:700; font-size: 125%; cursor:pointer;") +
                     .w3-center
                         input.w3-button.w3-deep-orange.w3-border.w3-border-deep-orange.w3-round-xxlarge.w3-hover-light-grey.w3-hover-text-deep-orange.w3-text-light-grey(type="submit" value="EDITAR" style = "width: 40%; font-weight:600")
@@ -115,7 +115,7 @@ block content
                       input.w3-margin.w3-center(name="stock" type="text" value="0" style="width:10%")
                       span.up(class="up"  onClick='increaseCount(event, this)' style="font-weight:700; font-size: 125%; cursor:pointer;") +
                     .w3-center
-                        input.w3-button.w3-deep-orange.w3-border.w3-border-deep-orange.w3-round-xxlarge.w3-hover-light-grey.w3-hover-text-deep-orange.w3-text-light-grey(type="submit" value="EDITAR" style = "width: 40%; font-weight:600")
+                        input.w3-button.w3-deep-orange.w3-border.w3-border-deep-orange.w3-round-xxlarge.w3-hover-light-grey.w3-hover-text-deep-orange.w3-text-light-grey(type="submit" value="CRIAR" style = "width: 40%; font-weight:600")
             a(onclick="myFunction(\"DemoCreate\")" style="cursor:pointer;")
               .product-container(style="display: flex; justify-content: center; align-items: center; height: 200px;")
                 img(src="images/add.png", style="max-width: 50%; max-height: 50%; object-fit: contain;") 
