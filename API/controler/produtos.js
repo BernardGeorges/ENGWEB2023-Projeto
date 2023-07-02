@@ -129,15 +129,6 @@ module.exports.updateProduto = l => {
         })
 }
 
-module.exports.updateStockById = (id, newStock) => {
-    return Produto.updateOne({ _id: id }, { $set: { stock: newStock } })
-        .then(resposta => {
-            return resposta;
-        })
-        .catch(erro => {
-            return erro;
-        });
-};
 
 module.exports.deleteProduto = id => {
     return Produto.deleteOne({ _id: id })
@@ -182,20 +173,35 @@ module.exports.addProduto = (id, prod) => {
 
 module.exports.updateStockByIds = (ids, stockList) => {
     const updates = ids.map((id, index) => {
-        const newStock = stockList[index];
-        return { _id: id, $inc: { stock: -newStock } };
-      });
+      const newStock = stockList[index];
+      return { _id: id, $inc: { stock: -newStock } };
+    });
     
-      return Produto.updateMany({ $or: updates })
-        .then(() => {
-          console.log('Atualização concluída');
-          return true;
-        })
-        .catch((error) => {
-          console.error('Erro:', error);
-          return false;
-        });
-    };
+
+    const promises = updates.map((update) => {
+      console.log(update)
+      const { _id, $inc } = update;
+      return Produto.updateOne({ _id }, { $inc })
+      .then(resposta => {
+        console.log(resposta)
+        return resposta
+    })
+    .catch(erro => {
+        console.log(resposta)
+        return erro
+    })
+    });
+  
+    return Promise.all(promises)
+      .then(() => {
+        console.log('Atualização concluída');
+        return true;
+      })
+      .catch((error) => {
+        console.error('Erro:', error);
+        return false;
+      });
+  };
 
 
 module.exports.deleteProduto = (id, prod) => {

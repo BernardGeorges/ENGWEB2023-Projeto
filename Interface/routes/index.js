@@ -146,6 +146,7 @@ router.get('/prod/removeFavorite/:id', function(req, res, next) {
 router.post('/checkout', function(req, res, next) {
   console.log(req.body)
   req.cookies.perfilUser.cart = []
+
   axios.put('http://localhost:7013/users/prod/updateUser/'+req.cookies.perfilUser._id+'?token='+req.cookies.token, req.cookies.perfilUser)
   .then(response => {
     axios.put('http://localhost:7012/prod/checkout', req.body)
